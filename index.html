@@ -524,7 +524,8 @@
         <div class="max-w-7xl mx-auto">
             <div
                 class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-4 scroll-animate opacity-0 translate-y-8">
-                <div><span
+                <div>
+                    <span
                         class="text-[#4ade80] text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase mb-2 block relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-[#4ade80]/50 after:scale-x-0 hover:after:scale-x-100 after:transition-transform">Selected
                         Works</span>
                     <h2 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter">My <span
@@ -535,104 +536,216 @@
                     class="text-slate-400 text-xs sm:text-sm max-w-xs italic border-l-2 border-[#4ade80] pl-4 transition-all duration-300 hover:border-l-4 hover:pl-6">
                     "Code is poetry, and these are my favorite verses."</p>
             </div>
+
             <div class="grid grid-cols-1 md:grid-cols-6 gap-5 sm:gap-6 auto-rows-fr">
+
                 <div
                     class="md:col-span-4 project-card group relative bg-[#0A0A0A] rounded-2xl sm:rounded-3xl border border-white/5 overflow-hidden hover:border-[#4ade80]/40 transition-all duration-700">
                     <div
                         class="absolute inset-0 bg-gradient-to-br from-[#4ade80]/0 to-transparent group-hover:from-[#4ade80]/10 transition-all duration-700">
                     </div>
-                    <div class="p-6 sm:p-8 h-full flex flex-col justify-between">
+                    <div class="p-6 sm:p-8 h-full flex flex-col justify-between relative z-10">
                         <div>
-                            <div class="flex justify-between items-start mb-4 flex-wrap gap-2"><span
-                                    class="bg-[#4ade80]/10 text-[#4ade80] text-[9px] sm:text-[10px] px-2 sm:px-3 py-1 rounded-full font-bold uppercase animate-pulse">Featured</span><a
-                                    href="https://github.com/NazrulIslam991/Bikretaa" target="_blank"
+                            <div class="flex justify-between items-start mb-4">
+                                <span
+                                    class="bg-[#4ade80]/10 text-[#4ade80] text-[9px] px-2 py-1 rounded-full font-bold uppercase">Enterprise
+                                    POS</span>
+                                <a href="https://github.com/NazrulIslam991/Bikretaa" target="_blank"
                                     class="text-white/40 hover:text-[#4ade80] transition-all duration-300 hover:scale-110"><i
-                                        class="fab fa-github text-xl sm:text-2xl"></i></a></div>
-                            <h3
-                                class="text-xl sm:text-2xl font-bold mb-2 group-hover:text-[#4ade80] transition-colors duration-300">
+                                        class="fab fa-github text-xl sm:text-2xl"></i></a>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-2 group-hover:text-[#4ade80] transition-colors">
                                 Bikretaa POS</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Powerful shop management
-                                ecosystem. Handles inventory control, real-time analytics, automated invoices.</p>
+                            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6"> A Flutter-based shop
+                                management system built for inventory, sales, and customer tracking. Includes secure
+                                authentication, real-time analytics, and interactive dashboards powered by Firebase and
+                                REST APIs.
+                            </p>
                         </div>
-                        <div class="mt-6 flex flex-wrap gap-2"><span
-                                class="text-[9px] sm:text-[10px] font-medium bg-white/10 px-2 py-1 rounded transition-all hover:bg-[#4ade80]/20">Flutter</span><span
-                                class="text-[9px] sm:text-[10px] font-medium bg-white/10 px-2 py-1 rounded transition-all hover:bg-[#4ade80]/20">Firebase</span><span
-                                class="text-[9px] sm:text-[10px] font-medium bg-white/10 px-2 py-1 rounded transition-all hover:bg-[#4ade80]/20">SQLite</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded">Flutter</span>
+                            <span class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded">MVVM</span>
+                            <span class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded">API</span>
+                            <span
+                                class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded">Firebase</span>
+                            <span class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded">Local
+                                DB</span>
                         </div>
                     </div>
                 </div>
+
                 <div
-                    class="md:col-span-2 project-card group bg-[#0A0A0A] rounded-2xl sm:rounded-3xl border border-white/5 p-6 sm:p-8 hover:border-blue-500/40 transition-all duration-500 hover:-translate-y-2">
-                    <div><i
-                            class="fas fa-running text-2xl sm:text-3xl text-blue-400/50 mb-4 block group-hover:scale-110 transition-transform duration-300"></i>
+                    class="md:col-span-2 project-card group bg-[#0A0A0A] rounded-2xl sm:rounded-3xl border border-white/5 p-6 sm:p-8 hover:border-emerald-500/40 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between relative overflow-hidden">
+                    <div
+                        class="absolute -right-10 -top-10 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700">
+                    </div>
+                    <div class="relative z-10">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-utensils text-2xl text-emerald-500/50"></i>
+                            <a href="#" class="text-white/20 hover:text-emerald-500 transition-all"><i
+                                    class="fab fa-github text-lg"></i></a>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 group-hover:text-emerald-400 transition-colors">
+                            Menu Assists</h3>
+                        <p class="text-slate-500 text-[11px] sm:text-xs mb-4 leading-relaxed"> An AI-powered Flutter app
+                            that scans restaurant menus using OCR to deliver personalized dietary insights, smart meal
+                            recommendations, and nutrition tracking for healthier food choices.
+                        </p>
+                    </div>
+                    <div class="relative z-10 pt-4 border-t border-white/5 flex flex-wrap gap-2">
+                        <span
+                            class="text-[8px] font-mono text-emerald-400/60 bg-emerald-400/5 px-1.5 py-0.5 rounded">Flutter</span>
+                        <span
+                            class="text-[8px] font-mono text-emerald-400/60 bg-emerald-400/5 px-1.5 py-0.5 rounded">Riverpod</span>
+                        <span
+                            class="text-[8px] font-mono text-emerald-400/60 bg-emerald-400/5 px-1.5 py-0.5 rounded">MVVM</span>
+                    </div>
+                </div>
+
+                <div
+                    class="md:col-span-2 project-card group bg-[#0A0A0A] rounded-2xl sm:rounded-3xl border border-white/5 p-6 sm:p-8 hover:border-amber-500/40 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-home text-2xl text-amber-500/50"></i>
+                            <a href="https://github.com/NazrulIslam991/Rent-Rover" target="_blank"
+                                class="text-white/40 hover:text-amber-500 transition-all"><i
+                                    class="fab fa-github text-xl"></i></a>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 group-hover:text-amber-400 transition-colors">Rent
+                            Rover</h3>
+                        <p class="text-slate-500 text-[11px] sm:text-xs mb-4"> A Kotlin-based property rental app built
+                            with Firebase, featuring secure authentication, real-time chat, and smart listing management
+                            for seamless communication between landlords and users.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="text-[9px] font-mono text-amber-500/60 bg-amber-500/5 px-2 py-1 rounded">Kotlin</span>
+                        <span
+                            class="text-[9px] font-mono text-amber-500/60 bg-amber-500/5 px-2 py-1 rounded">Firebase</span>
+                    </div>
+                </div>
+
+                <div
+                    class="md:col-span-4 project-card group relative bg-[#0A0A0A] rounded-2xl sm:rounded-3xl border border-white/5 overflow-hidden hover:border-red-500/40 transition-all duration-700">
+                    <div
+                        class="absolute inset-0 bg-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                    </div>
+                    <div class="p-6 sm:p-8 h-full flex flex-col justify-between relative z-10">
+                        <div class="flex flex-col md:flex-row gap-6">
+                            <div class="flex-1">
+                                <div class="flex justify-between items-start mb-4">
+                                    <span
+                                        class="bg-red-500/10 text-red-500 text-[9px] px-2 py-1 rounded-full font-bold uppercase">Community
+                                        Support</span>
+                                    <a href="#" class="text-white/20 hover:text-red-500 transition-all"><i
+                                            class="fab fa-github text-xl"></i></a>
+                                </div>
+                                <h3
+                                    class="text-xl sm:text-2xl font-bold mb-2 group-hover:text-red-400 transition-colors">
+                                    Community Support</h3>
+                                <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                                <p class="text-slate-400 text-xs leading-relaxed mb-6">
+                                    A real-time community support system built with Flutter, enabling users to request
+                                    help, connect with nearby volunteers, and coordinate through live chat, location
+                                    tracking, and SOS alerts.
+                                </p>
+                                </p>
+                            </div>
+                            <div class="hidden md:flex flex-col justify-center w-40 border-l border-white/5 pl-6 gap-2">
+                                <span class="text-[10px] text-red-400/80 font-bold">Flutter</span>
+                                <span class="text-[10px] text-red-400/80 font-bold">MVVM</span>
+                                <span class="text-[10px] text-red-400/80 font-bold">Riverpod</span>
+                                <span class="text-[10px] text-red-400/80 font-bold">Socket.io</span>
+
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span
+                                class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded">Flutter</span>
+                            <span class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded">MVVM</span>
+                            <span
+                                class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded">Riverpod</span>
+                            <span class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded">API
+                                Integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="md:col-span-3 project-card group bg-[#0A0A0A] rounded-2xl sm:rounded-3xl border border-white/5 p-6 sm:p-8 hover:border-blue-500/40 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between relative overflow-hidden">
+                    <div
+                        class="absolute -right-10 -top-10 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700">
+                    </div>
+                    <div class="relative z-10">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-running text-2xl text-blue-500/50"></i>
+                            <a href="#" class="text-white/20 hover:text-blue-400 transition-all"><i
+                                    class="fab fa-github text-xl"></i></a>
+                        </div>
                         <h3 class="text-lg sm:text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors">
                             CoachMe</h3>
-                        <p class="text-slate-500 text-[11px] sm:text-xs leading-relaxed">Athlete booking with Stripe &
-                            real-time chat.</p>
-                    </div>
-                    <div class="flex gap-2 mt-5">
-                        <div class="h-1.5 w-1.5 rounded-full bg-blue-500 animate-ping"></div><span
-                            class="text-[9px] sm:text-[10px] text-slate-400 font-bold uppercase">In Development</span>
-                    </div>
-                </div>
-                <div
-                    class="md:col-span-2 project-card group bg-[#0A0A0A] rounded-2xl sm:rounded-3xl border border-white/5 p-6 sm:p-8 hover:border-amber-500/40 transition-all duration-500 hover:-translate-y-2">
-                    <h3 class="text-lg sm:text-xl font-bold mb-2 group-hover:text-amber-400 transition-colors">Rent
-                        Rover</h3>
-                    <p class="text-slate-500 text-[11px] sm:text-xs mb-5">Smart house rental marketplace for Bangladesh
-                        market.</p><a href="https://github.com/NazrulIslam991/Rent-Rover"
-                        class="text-[#4ade80] text-[9px] sm:text-[10px] font-black uppercase tracking-tighter hover:tracking-widest transition-all inline-flex items-center gap-1 group-hover:gap-2">View
-                        Code →</a>
-                </div>
-                <div class="md:col-span-2 grid grid-rows-2 gap-5 sm:gap-6">
-                    <div
-                        class="bg-[#111] rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/5 hover:border-orange-500/30 transition-all duration-400 hover:-translate-y-1">
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="bg-orange-500/10 p-2 sm:p-3 rounded-xl group-hover:scale-110 transition-transform">
-                                <i class="fas fa-box text-orange-500 text-sm sm:text-base"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xs sm:text-sm font-bold">Searchable AppBar</h4>
-                                <p class="text-[9px] sm:text-[10px] text-slate-500">Flutter Package</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="bg-[#111] rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/5 hover:border-pink-500/30 transition-all duration-400 hover:-translate-y-1">
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="bg-pink-500/10 p-2 sm:p-3 rounded-xl group-hover:scale-110 transition-transform">
-                                <i class="fas fa-bell text-pink-500"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xs sm:text-sm font-bold">SnackFlow</h4>
-                                <p class="text-[9px] sm:text-[10px] text-slate-500">Notification Library</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="md:col-span-2 project-card group bg-[#0A0A0A] rounded-2xl sm:rounded-3xl border border-white/5 p-6 sm:p-8 hover:border-red-500/40 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
-                    <div
-                        class="absolute -right-10 -top-10 w-32 h-32 bg-red-500/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700">
-                    </div>
-                    <div>
-                        <h3
-                            class="text-lg sm:text-xl font-bold mb-2 text-red-400 group-hover:text-red-300 transition-colors">
-                            SOS Community</h3>
-                        <p class="text-slate-500 text-[11px] sm:text-xs mb-3">Emergency response & volunteer platform.
+                        <p class="text-slate-500 text-[11px] sm:text-xs mb-4 leading-relaxed">
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6">
+                            A full-featured Flutter platform connecting athletes and coaches with role-based
+                            experiences. Includes session booking, secure payments, real-time chat, premium content
+                            access, and a built-in marketplace for services and products.
                         </p>
-                        <div class="w-full bg-white/5 h-[1px] my-3"></div><span
-                            class="text-[8px] sm:text-[9px] text-slate-400 italic group-hover:text-red-300 transition-colors">Helping
-                            when it matters most.</span>
+                        </p>
+                    </div>
+                    <div class="relative z-10 pt-4 border-t border-white/5 flex flex-wrap gap-2">
+                        <span
+                            class="text-[8px] font-mono text-blue-400/60 bg-blue-400/5 px-1.5 py-0.5 rounded">Flutter</span>
+                        <span
+                            class="text-[8px] font-mono text-blue-400/60 bg-blue-400/5 px-1.5 py-0.5 rounded">MVVM</span>
+                        <span
+                            class="text-[8px] font-mono text-blue-400/60 bg-blue-400/5 px-1.5 py-0.5 rounded">Riverpod</span>
+                        <span
+                            class="text-[8px] font-mono text-blue-400/60 bg-blue-400/5 px-1.5 py-0.5 rounded">API</span>
+                        <span class="text-[8px] font-mono text-blue-400/60 bg-blue-400/5 px-1.5 py-0.5 rounded">Local
+                            db</span>
+                        <span
+                            class="text-[8px] font-mono text-blue-400/60 bg-blue-400/5 px-1.5 py-0.5 rounded">Socket.io</span>
                     </div>
                 </div>
+
+                <div
+                    class="md:col-span-3 project-card group bg-[#0A0A0A] rounded-2xl sm:rounded-3xl border border-white/5 p-6 sm:p-8 hover:border-purple-500/40 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between relative overflow-hidden">
+                    <div
+                        class="absolute -right-10 -top-10 w-32 h-32 bg-purple-500/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700">
+                    </div>
+                    <div class="relative z-10">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-paw text-2xl text-purple-500/50"></i>
+                            <a href="#" class="text-white/20 hover:text-purple-500 transition-all"><i
+                                    class="fab fa-github text-xl"></i></a>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">
+                            PetPassion</h3>
+                        <p class="text-slate-500 text-[11px] sm:text-xs mb-4 leading-relaxed">Android e-commerce
+                            platform built with Java and Firebase, optimized for real-time inventory management and user
+                            profiles.</p>
+                    </div>
+                    <div class="relative z-10 pt-4 border-t border-white/5 flex flex-wrap gap-2">
+                        <span
+                            class="text-[8px] font-mono text-purple-400/60 bg-purple-400/5 px-1.5 py-0.5 rounded">Java</span>
+                        <span
+                            class="text-[8px] font-mono text-purple-400/60 bg-purple-400/5 px-1.5 py-0.5 rounded">Firebase</span>
+                        <span
+                            class="text-[8px] font-mono text-purple-400/60 bg-purple-400/5 px-1.5 py-0.5 rounded">Native
+                            Android</span>
+                    </div>
+                </div>
+
             </div>
-            <div class="mt-14 sm:mt-20 text-center"><a href="https://github.com/NazrulIslam991" target="_blank"
-                    class="btn-ripple group relative inline-flex items-center gap-2 bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-[10px] sm:text-xs uppercase tracking-widest hover:bg-[#4ade80] transition-all duration-500 hover:shadow-2xl hover:scale-105">Explore
-                    Full Archive <i
-                        class="fas fa-arrow-right group-hover:translate-x-2 transition-transform duration-300"></i></a>
+
+            <div class="mt-14 sm:mt-20 text-center">
+                <a href="projects.html"
+                    class="btn-ripple group relative inline-flex items-center gap-2 bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-[10px] sm:text-xs uppercase tracking-widest hover:bg-[#4ade80] transition-all duration-500 hover:shadow-2xl hover:scale-105">
+                    Explore Full Archive <i
+                        class="fas fa-arrow-right group-hover:translate-x-2 transition-transform duration-300"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -852,8 +965,10 @@
         }
         const menuBtn = document.getElementById('menuBtn'); const mobileMenu = document.getElementById('mobileMenu');
         if (menuBtn && mobileMenu) { menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); const icon = menuBtn.querySelector('i'); if (icon) icon.classList.toggle('fa-bars'); if (icon) icon.classList.toggle('fa-times'); }); document.querySelectorAll('.nav-link-mobile').forEach(link => { link.addEventListener('click', () => mobileMenu.classList.add('hidden')); }); }
-        window.addEventListener("load", () => { updateExperience('junior'); setActiveNavLink(); });
-        window.addEventListener("scroll", setActiveNavLink);
+        document.addEventListener("DOMContentLoaded", () => {
+            updateExperience('junior');
+            setActiveNavLink();
+        }); window.addEventListener("scroll", setActiveNavLink);
     </script>
 </body>
 

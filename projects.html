@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive | Nazrul Islam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --accent: #00f2ff;
+            --bg: #050505;
+            --card-bg: rgba(255, 255, 255, 0.03);
+        }
+
+        body {
+            background: var(--bg);
+            color: #e2e8f0;
+            scroll-behavior: smooth;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Background Glow */
+        .glow {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 242, 255, 0.05) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Refined Project Card */
+        .project-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-width: 320px;
+            max-width: 320px;
+            height: 380px;
+            position: relative;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            background: rgba(0, 242, 255, 0.02);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px -20px rgba(0, 242, 255, 0.2);
+        }
+
+        .tech-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .project-card:hover .tech-tag {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Horizontal Scroll - Clean */
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 1.5rem;
+            padding: 2rem 0;
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Chrome/Safari */
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .line {
+            height: 1px;
+            flex-grow: 1;
+            background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+            opacity: 0.3;
+        }
+
+        .client-badge {
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body class="p-6 md:p-16 lg:p-24 selection:bg-cyan-500/30">
+    <div class="glow"></div>
+
+    <div class="max-w-7xl mx-auto">
+        <header class="mb-24">
+            <a href="index.html"
+                class="text-slate-500 text-xs font-bold mb-8 inline-flex items-center group hover:text-cyan-400 transition-colors">
+                <i class="fas fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i> BACK TO HOME
+            </a>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-4">Archive<span
+                    class="text-cyan-400">.</span></h1>
+            <p class="text-slate-400 max-w-lg text-sm leading-relaxed font-light">
+                Demonstrating hands-on experience through <span class="text-white font-medium">11 real-world
+                    projects</span>, including high-performance applications and open-source innovations.
+            </p>
+        </header>
+
+        <section class="mb-24">
+            <div class="section-header">
+                <h2 class="text-xs font-bold tracking-[0.3em] text-cyan-400 uppercase">01. Open Source Packages</h2>
+                <div class="line"></div>
+            </div>
+            <div class="scroll-container">
+                <div class="project-card p-8 rounded-2xl group">
+                    <div>
+                        <div class="mb-4 text-slate-500 font-mono text-[10px] uppercase tracking-widest">2025 • Flutter
+                            Pub</div>
+                        <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">SnackFlow</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6"> A modern Flutter notification system
+                            with smooth glass-style UI, multiple alert types, and smart contrast adjustments for better
+                            user experience.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Glassmorphism</span>
+                            <span class="tech-tag">Haptic Engine</span>
+                            <span class="tech-tag">Adaptive UI</span>
+                            <span class="tech-tag">Stateful Overlays</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/NazrulIslam991/SnackFlow" target="_blank"
+                        class="flex items-center gap-2 text-xs font-bold hover:text-cyan-400 transition-colors uppercase tracking-widest">
+                        Source Code <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <div class="project-card p-8 rounded-2xl group">
+                    <div>
+                        <div class="mb-4 text-slate-500 font-mono text-[10px] uppercase tracking-widest">2025 • Flutter
+                            Pub</div>
+                        <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">Searchable AppBar
+                        </h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6">A high-fidelity AppBar replacement
+                            featuring cubic-animated search transitions and **integrated voice-to-text search
+                            capabilities**. Engineered with automatic theme-sensing and notification badge
+                            infrastructure for enterprise-grade headers.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Voice Search</span>
+                            <span class="tech-tag">Cubic Animation</span>
+                            <span class="tech-tag">Theme Awareness</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/NazrulIslam991/searchable_appbar" target="_blank"
+                        class="flex items-center gap-2 text-xs font-bold hover:text-cyan-400 transition-colors uppercase tracking-widest">
+                        Source Code <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-24">
+            <div class="section-header">
+                <h2 class="text-xs font-bold tracking-[0.3em] text-cyan-400 uppercase">02. Mobile Applications</h2>
+                <div class="line"></div>
+            </div>
+            <div class="scroll-container">
+                <div class="project-card p-8 rounded-2xl group">
+                    <div>
+                        <div class="mb-4 flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-cyan-500"></span>
+                            <span class="text-slate-500 font-bold text-[9px] uppercase tracking-[0.25em]"> March
+                                2026</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">CoachMe Hub</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6">
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6">
+                            A full-featured Flutter platform connecting athletes and coaches with role-based
+                            experiences. Includes session booking, secure payments, real-time chat, premium content
+                            access, and a built-in marketplace for services and products.
+                        </p>
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">MVVM</span>
+                            <span class="tech-tag">Riverpod</span>
+                            <span class="tech-tag">Payment getway,Map</span>
+                            <span class="tech-tag">API, Socket.io</span>
+                        </div>
+                    </div>
+                    <div class="text-slate-600 text-[9px] font-bold uppercase tracking-widest italic">Client Project
+                    </div>
+                </div>
+
+                <div class="project-card p-8 rounded-2xl group border-red-500/10 hover:border-red-500/40">
+                    <div>
+                        <div class="mb-4 flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-cyan-500"></span>
+                            <span class="text-slate-500 font-bold text-[9px] uppercase tracking-[0.25em]"> Feb
+                                2026</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 group-hover:text-red-400 transition-colors">Community Support
+                        </h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6">
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6">
+                            A real-time community support system built with Flutter, enabling users to request help,
+                            connect with nearby volunteers, and coordinate through live chat, location tracking, and SOS
+                            alerts.
+                        </p>
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">MVVM</span>
+                            <span class="tech-tag">Riverpod</span>
+                            <span class="tech-tag">Map</span>
+                            <span class="tech-tag">API, Socket.io</span>
+                        </div>
+                    </div>
+                    <div class="text-slate-600 text-[9px] font-bold uppercase tracking-widest italic">Client Project
+                    </div>
+                </div>
+
+                <div class="project-card p-8 rounded-2xl group">
+                    <div>
+                        <div class="mb-4 flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-cyan-500"></span>
+                            <span class="text-slate-500 font-bold text-[9px] uppercase tracking-[0.25em]"> Jan
+                                2026</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">Menu Assists</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6"> An AI-powered Flutter app that scans
+                            restaurant menus using OCR to deliver personalized dietary insights, smart meal
+                            recommendations, and nutrition tracking for healthier food choices.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">MVVM</span>
+                            <span class="tech-tag">Riverpod</span>
+                            <span class="tech-tag">Google ML Kit</span>
+                            <span class="tech-tag">OCR</span>
+                        </div>
+                    </div>
+                    <div class="text-slate-600 text-[9px] font-bold uppercase tracking-widest italic">Client Project
+                    </div>
+                </div>
+
+                <div class="project-card p-8 rounded-2xl group">
+                    <div>
+                        <div class="mb-4 flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-cyan-500"></span>
+                            <span class="text-slate-500 font-bold text-[9px] uppercase tracking-[0.25em]"> sep - dec
+                                2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">Bikretaa POS</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6"> A Flutter-based shop management system
+                            built for inventory, sales, and customer tracking. Includes secure authentication, real-time
+                            analytics, and interactive dashboards powered by Firebase and REST APIs.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">MVVM</span>
+                            <span class="tech-tag">Riverpod</span>
+                            <span class="tech-tag">Google ML Kit</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/NazrulIslam991/Bikretaa" target="_blank"
+                        class="flex items-center gap-2 text-xs font-bold hover:text-cyan-400 transition-colors uppercase tracking-widest">
+                        GitHub <i class="fab fa-github"></i>
+                    </a>
+                </div>
+
+                <div class="project-card p-8 rounded-2xl group">
+                    <div>
+                        <div class="mb-4 flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-cyan-500"></span>
+                            <span class="text-slate-500 font-bold text-[9px] uppercase tracking-[0.25em]"> sep - dec
+                                2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">Crafty Bay</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6">Full-scale commerce platform with REST
+                            API integration and custom cart logic.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">GetX</span>
+                            <span class="tech-tag">REST API</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/NazrulIslam991/Crafty-Bay" target="_blank"
+                        class="flex items-center gap-2 text-xs font-bold hover:text-cyan-400 transition-colors uppercase tracking-widest">
+                        GitHub <i class="fab fa-github"></i>
+                    </a>
+                </div>
+
+                <div class="project-card p-8 rounded-2xl group border-amber-500/10">
+                    <div>
+                        <div class="mb-4 flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-cyan-500"></span>
+                            <span class="text-slate-500 font-bold text-[9px] uppercase tracking-[0.25em]"> may - july
+                                2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 group-hover:text-amber-400 transition-colors">Rent Rover</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6"> A Kotlin-based property rental app built
+                            with Firebase, featuring secure authentication, real-time chat, and smart listing management
+                            for seamless communication between landlords and users.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/NazrulIslam991/Rent-Rover" target="_blank"
+                        class="flex items-center gap-2 text-xs font-bold hover:text-amber-400 transition-colors uppercase tracking-widest">
+                        GitHub <i class="fab fa-github"></i>
+                    </a>
+                </div>
+
+                <div class="project-card p-8 rounded-2xl group border-purple-500/10">
+                    <div>
+                        <div class="mb-4 text-purple-400 client-badge">Native Android</div>
+                        <h3 class="text-xl font-bold mb-3 group-hover:text-purple-400 transition-colors">PetPassion</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6">E-commerce platform for local store
+                            management built with Java/Native tech.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                    </div>
+                    <a href="#"
+                        class="flex items-center gap-2 text-xs font-bold hover:text-purple-400 transition-colors uppercase tracking-widest">
+                        Source Code <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-24">
+            <div class="section-header">
+                <h2 class="text-xs font-bold tracking-[0.3em] text-cyan-400 uppercase">03. Interactive Games</h2>
+                <div class="line"></div>
+            </div>
+            <div class="scroll-container">
+                <div class="project-card p-8 rounded-2xl group overflow-hidden">
+                    <div class="absolute -top-4 -right-4 opacity-5 group-hover:opacity-20 transition-opacity">
+                        <i class="fas fa-gamepad text-9xl text-cyan-400"></i>
+                    </div>
+                    <div>
+                        <div class="mb-4 client-badge">Physics Game (2025)</div>
+                        <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">Slice Storm</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6"> A fast-paced Flutter-based fruit slicing
+                            game inspired by arcade physics gameplay. Features smooth animations, swipe controls,
+                            scoring system, and immersive audio effects with progressive difficulty.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Flame Engine</span>
+                            <span class="tech-tag">GetX</span>
+                            <span class="tech-tag">Audio System</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/NazrulIslam991/Slice-Storm" target="_blank"
+                        class="flex items-center gap-2 text-xs font-bold hover:text-cyan-400 transition-colors uppercase tracking-widest">
+                        GitHub <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <div class="project-card p-8 rounded-2xl group">
+                    <div>
+                        <div class="mb-4 client-badge">AI Logic game (2025)</div>
+                        <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">Tic Tac Toe AI
+                        </h3>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6"> A Flutter-based Tic Tac Toe game
+                            featuring both multiplayer and AI mode. The AI is powered by the Minimax algorithm,
+                            delivering a challenging and strategic gameplay experience with smooth UI and score
+                            tracking.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Minimax Algorithm</span>
+                            <span class="tech-tag">AI Logic</span>
+                            <span class="tech-tag">Game UI</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/NazrulIslam991/Tic-Tac-Toe" target="_blank"
+                        class="flex items-center gap-2 text-xs font-bold hover:text-cyan-400 transition-colors uppercase tracking-widest">
+                        GitHub <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer
+            class="mt-40 pb-12 border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-[10px] uppercase font-bold tracking-[0.2em]">
+            <p>© 2026 Nazrul Islam • Software Developer</p>
+            <div class="flex gap-10">
+                <a href="https://github.com/NazrulIslam991" class="hover:text-cyan-400 transition-colors">GitHub</a>
+                <a href="#" class="hover:text-cyan-400 transition-colors">LinkedIn</a>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
