@@ -59,7 +59,7 @@ const aboutData = {
 };
 
 // Typewriter Configuration
-const roles = ["Junior Flutter Developer", "Flutter Developer @ Softvence Delta"];
+const roles = ["Junior Flutter Developer"];
 let roleIndex = 0, charIndex = 0;
 const typedElement = document.getElementById("typed-text");
 
