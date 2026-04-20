@@ -10,7 +10,7 @@ const aboutData = {
     bio: {
         title: "I'm Md. Nazrul Islam Nayon",
         subtitle: "Mobile Application Developer",
-        desc: "A passionate Flutter Developer from Dhaka, Bangladesh, focused on building elegant, scalable, and high-performance mobile applications. I transform complex problems into intuitive digital experiences using clean architecture, modern state management, and robust backend integrations.",
+        desc: "A passionate Flutter Developer from Dhaka, Bangladesh, focused on building elegant, scalable, and high-performance mobile apps by combining clean code practices with efficient state management. My goal is to deliver digital solutions that are easy to use and built to last.",
         details: [
             { icon: "fa-calendar-alt", label: "Date of Birth", value: "01 January, 2002" },
             { icon: "fa-user", label: "Age", value: "24 Years" },
@@ -23,7 +23,8 @@ const aboutData = {
     edu: {
         title: "Academic Journey",
         subtitle: "Education Timeline",
-        desc: "A representation of my strong academic grounding in Computer Science, marked by consistent excellence, analytical depth, and a steadfast commitment to continuous improvement.", details: [
+        desc: "Focused on building a solid foundation through my studies and always looking for ways to grow my skills.",
+        details: [
             { icon: "fa-graduation-cap", label: "B.Sc. in Computer Science & Engineering", institution: "Leading University, Sylhet", result: "CGPA 3.69" },
             { icon: "fa-microscope", label: "Higher Secondary Certificate (HSC)", institution: "BAF Shaheen College, Shamshernagar (Science)", result: "GPA 5.00" },
             { icon: "fa-book", label: "Secondary School Certificate (SSC)", institution: "Deena-nath Institution Satkapon Govt. High School (Science)", result: "GPA 5.00" }
