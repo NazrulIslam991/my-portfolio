@@ -24,7 +24,6 @@
             overflow-x: hidden;
         }
 
-        /* Ambient Background Glow */
         .glow {
             position: fixed;
             top: 0;
@@ -36,7 +35,6 @@
             pointer-events: none;
         }
 
-        /* Refined Project Card */
         .project-card {
             background: var(--card-bg);
             backdrop-filter: blur(10px);
@@ -47,7 +45,7 @@
             justify-content: space-between;
             min-width: 320px;
             max-width: 320px;
-            height: 380px;
+            height: 330px;
             position: relative;
         }
 
@@ -69,26 +67,17 @@
             text-transform: uppercase;
         }
 
-        .project-card:hover .tech-tag {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        /* Horizontal Scroll - Clean */
         .scroll-container {
             display: flex;
             overflow-x: auto;
             gap: 1.5rem;
             padding: 2rem 0;
             scrollbar-width: none;
-            /* Firefox */
         }
 
         .scroll-container::-webkit-scrollbar {
             display: none;
         }
-
-        /* Chrome/Safari */
 
         .section-header {
             display: flex;
@@ -104,12 +93,26 @@
             opacity: 0.3;
         }
 
-        .client-badge {
-            font-size: 9px;
-            font-weight: 800;
-            letter-spacing: 0.1em;
-            color: var(--accent);
-            text-transform: uppercase;
+        /* Modal styling */
+        #projectModal {
+            display: none;
+            backdrop-filter: blur(12px);
+        }
+
+        .modal-animate {
+            animation: modalFadeUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        @keyframes modalFadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -127,9 +130,21 @@
                     class="text-cyan-400">.</span></h1>
             <p class="text-slate-400 max-w-lg text-sm leading-relaxed font-light">
                 Demonstrating hands-on experience through <span class="text-white font-medium">11 real-world
-                    projects</span>, including high-performance applications and open-source innovations.
+                    projects</span>.
             </p>
         </header>
+
+        <div id="projectModal" class="fixed inset-0 z-[100] flex items-center justify-center p-4">
+            <div class="absolute inset-0 bg-black/90" onclick="closeModal()"></div>
+            <div
+                class="modal-animate bg-[#0a0a0a] border border-white/10 p-8 md:p-12 rounded-3xl max-w-2xl w-full relative z-10 shadow-2xl">
+                <button onclick="closeModal()"
+                    class="absolute top-6 right-6 text-slate-500 hover:text-white transition-colors">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                <div id="modalContent"></div>
+            </div>
+        </div>
 
         <section class="mb-24">
             <div class="section-header">
@@ -142,19 +157,21 @@
                         <div class="mb-4 text-slate-500 font-mono text-[10px] uppercase tracking-widest">2025 • Flutter
                             Pub</div>
                         <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">SnackFlow</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed mb-6"> A modern Flutter notification system
-                            with smooth glass-style UI, multiple alert types, and smart contrast adjustments for better
-                            user experience.
+                        <p class="text-slate-400 text-xs leading-relaxed line-clamp-3 mb-2 project-desc">
+                            A modern Flutter notification system with smooth glass-style UI, multiple alert types, and
+                            smart contrast adjustments for better user experience. Engineered with custom animations and
+                            haptic feedback.
                         </p>
+                        <button onclick="openModal(this)"
+                            class="text-cyan-400 text-[8px] font-bold uppercase tracking-wider hover:underline mb-4">Read
+                            More</button>
                         <div class="flex flex-wrap gap-2">
                             <span class="tech-tag">Glassmorphism</span>
                             <span class="tech-tag">Haptic Engine</span>
-                            <span class="tech-tag">Adaptive UI</span>
-                            <span class="tech-tag">Stateful Overlays</span>
                         </div>
                     </div>
                     <a href="https://github.com/NazrulIslam991/SnackFlow" target="_blank"
-                        class="flex items-center gap-2 text-xs font-bold hover:text-cyan-400 transition-colors uppercase tracking-widest">
+                        class="flex items-center gap-2 text-xs font-bold hover:text-cyan-400 transition-colors uppercase tracking-widest mt-6">
                         Source Code <i class="fab fa-github"></i>
                     </a>
                 </div>
@@ -164,19 +181,21 @@
                             Pub</div>
                         <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">Searchable AppBar
                         </h3>
-                        <p class="text-slate-400 text-xs leading-relaxed mb-6">A high-fidelity AppBar replacement
-                            featuring cubic-animated search transitions and **integrated voice-to-text search
-                            capabilities**. Engineered with automatic theme-sensing and notification badge
-                            infrastructure for enterprise-grade headers.
+                        <p class="text-slate-400 text-xs leading-relaxed line-clamp-3 mb-2 project-desc">
+                            A high-fidelity AppBar replacement featuring cubic-animated search transitions and
+                            integrated voice-to-text search capabilities. Engineered with automatic theme-sensing and
+                            notification badge infrastructure.
                         </p>
+                        <button onclick="openModal(this)"
+                            class="text-cyan-400 text-[8px] font-bold uppercase tracking-wider hover:underline mb-4">Read
+                            More</button>
                         <div class="flex flex-wrap gap-2">
                             <span class="tech-tag">Voice Search</span>
-                            <span class="tech-tag">Cubic Animation</span>
-                            <span class="tech-tag">Theme Awareness</span>
+                            <span class="tech-tag">Animation</span>
                         </div>
                     </div>
                     <a href="https://github.com/NazrulIslam991/searchable_appbar" target="_blank"
-                        class="flex items-center gap-2 text-xs font-bold hover:text-cyan-400 transition-colors uppercase tracking-widest">
+                        class="flex items-center gap-2 text-xs font-bold hover:text-cyan-400 transition-colors uppercase tracking-widest mt-6">
                         Source Code <i class="fab fa-github"></i>
                     </a>
                 </div>
@@ -193,166 +212,191 @@
                     <div>
                         <div class="mb-4 flex items-center gap-2">
                             <span class="w-1 h-1 rounded-full bg-cyan-500"></span>
-                            <span class="text-slate-500 font-bold text-[9px] uppercase tracking-[0.25em]"> March
+                            <span class="text-slate-500 font-bold text-[9px] uppercase tracking-[0.25em]">April
                                 2026</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">CoachMe Hub</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed mb-6">
-                        <p class="text-slate-400 text-xs leading-relaxed mb-6">
-                            A full-featured Flutter platform connecting athletes and coaches with role-based
-                            experiences. Includes session booking, secure payments, real-time chat, premium content
-                            access, and a built-in marketplace for services and products.
+                        <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">STABILITY</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed line-clamp-3 mb-2 project-desc">
+                            STABILITY is a sophisticated personal financial management application designed to bridge
+                            the gap between daily spending and long-term financial security. The projects core
+                            innovation lies in its intelligent "Safe to Spend" engine, which meticulously calculates a
+                            users discretionary income by analyzing fixed obligations, recurring debts, and personal
+                            savings targets against their total earnings. I, along with my talented collaborators Kamrul
+                            and Tajemul, successfully developed the complete Flutter UI, transforming a complex
+                            financial logic into a seamless, high-performance mobile experience. The user journey begins
+                            with a secure authentication flow featuring Google integration and OTP verification, leading
+                            into a comprehensive onboarding process that captures critical data regarding income
+                            stability and pay frequency. We focused on building a highly responsive interface that
+                            manages detailed inputs for rent, mortgages, and utility bills, ultimately generating a
+                            dynamic "Stability Profile." Our technical implementation ensures that as users set
+                            aspirational goals—such as purchasing high-end electronics or establishing emergency
+                            funds—the UI reflects real-time recalculations and progress tracking. By adhering to a
+                            clean, minimalist design philosophy, we ensured that every functional component, from debt
+                            management to subscription handling, remains intuitive and visually cohesive, providing
+                            users with absolute financial clarity in a premium digital environment.
                         </p>
-                        </p>
+                        <button onclick="openModal(this)"
+                            class="text-cyan-400 text-[8px] font-bold uppercase tracking-wider hover:underline mb-4">Read
+                            More</button>
                         <div class="flex flex-wrap gap-2">
                             <span class="tech-tag">Flutter</span>
                             <span class="tech-tag">MVVM</span>
                             <span class="tech-tag">Riverpod</span>
-                            <span class="tech-tag">Payment getway,Map</span>
-                            <span class="tech-tag">API, Socket.io</span>
                         </div>
                     </div>
-                    <div class="text-slate-600 text-[9px] font-bold uppercase tracking-widest italic">Client Project
+                    <div class="text-slate-600 text-[9px] font-bold uppercase tracking-widest italic mt-4">Client
+                        Project</div>
+                </div>
+
+                <div class="project-card p-8 rounded-2xl group">
+                    <div>
+                        <div class="mb-4 flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-cyan-500"></span>
+                            <span class="text-slate-500 font-bold text-[9px] uppercase tracking-[0.25em]">March
+                                2026</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">CoachMe Hub</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed line-clamp-3 mb-2 project-desc">
+                            A full-featured Flutter platform connecting athletes and coaches with role-based
+                            experiences. Includes session booking, secure payments, real-time chat, and a built-in
+                            marketplace for services and products.
+                        </p>
+                        <button onclick="openModal(this)"
+                            class="text-cyan-400 text-[8px] font-bold uppercase tracking-wider hover:underline mb-4">Read
+                            More</button>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Socket.io</span>
+                            <span class="tech-tag">Payment</span>
+                        </div>
                     </div>
+                    <div class="text-slate-600 text-[9px] font-bold uppercase tracking-widest italic mt-4">Client
+                        Project</div>
                 </div>
 
                 <div class="project-card p-8 rounded-2xl group border-red-500/10 hover:border-red-500/40">
                     <div>
                         <div class="mb-4 flex items-center gap-2">
-                            <span class="w-1 h-1 rounded-full bg-cyan-500"></span>
-                            <span class="text-slate-500 font-bold text-[9px] uppercase tracking-[0.25em]"> Feb
+                            <span class="w-1 h-1 rounded-full bg-red-500"></span>
+                            <span class="text-slate-500 font-bold text-[9px] uppercase tracking-[0.25em]">Feb
                                 2026</span>
                         </div>
                         <h3 class="text-xl font-bold mb-3 group-hover:text-red-400 transition-colors">Community Support
                         </h3>
-                        <p class="text-slate-400 text-xs leading-relaxed mb-6">
-                        <p class="text-slate-400 text-xs leading-relaxed mb-6">
+                        <p class="text-slate-400 text-xs leading-relaxed line-clamp-3 mb-2 project-desc">
                             A real-time community support system built with Flutter, enabling users to request help,
                             connect with nearby volunteers, and coordinate through live chat, location tracking, and SOS
                             alerts.
                         </p>
-                        </p>
+                        <button onclick="openModal(this)"
+                            class="text-cyan-400 text-[8px] font-bold uppercase tracking-wider hover:underline mb-4">Read
+                            More</button>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">MVVM</span>
-                            <span class="tech-tag">Riverpod</span>
-                            <span class="tech-tag">Map</span>
-                            <span class="tech-tag">API, Socket.io</span>
+                            <span class="tech-tag">Maps</span>
+                            <span class="tech-tag">Live SOS</span>
                         </div>
                     </div>
-                    <div class="text-slate-600 text-[9px] font-bold uppercase tracking-widest italic">Client Project
-                    </div>
+                    <div class="text-slate-600 text-[9px] font-bold uppercase tracking-widest italic mt-4">Client
+                        Project</div>
                 </div>
 
                 <div class="project-card p-8 rounded-2xl group">
                     <div>
                         <div class="mb-4 flex items-center gap-2">
                             <span class="w-1 h-1 rounded-full bg-cyan-500"></span>
-                            <span class="text-slate-500 font-bold text-[9px] uppercase tracking-[0.25em]"> Jan
+                            <span class="text-slate-500 font-bold text-[9px] uppercase tracking-[0.25em]">Jan
                                 2026</span>
                         </div>
                         <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">Menu Assists</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed mb-6"> An AI-powered Flutter app that scans
-                            restaurant menus using OCR to deliver personalized dietary insights, smart meal
-                            recommendations, and nutrition tracking for healthier food choices.
+                        <p class="text-slate-400 text-xs leading-relaxed line-clamp-3 mb-2 project-desc">
+                            An AI-powered Flutter app that scans restaurant menus using OCR to deliver personalized
+                            dietary insights, smart meal recommendations, and nutrition tracking for healthier food
+                            choices.
                         </p>
+                        <button onclick="openModal(this)"
+                            class="text-cyan-400 text-[8px] font-bold uppercase tracking-wider hover:underline mb-4">Read
+                            More</button>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">MVVM</span>
-                            <span class="tech-tag">Riverpod</span>
-                            <span class="tech-tag">Google ML Kit</span>
+                            <span class="tech-tag">ML Kit</span>
                             <span class="tech-tag">OCR</span>
                         </div>
                     </div>
-                    <div class="text-slate-600 text-[9px] font-bold uppercase tracking-widest italic">Client Project
-                    </div>
+                    <div class="text-slate-600 text-[9px] font-bold uppercase tracking-widest italic mt-4">Client
+                        Project</div>
                 </div>
 
                 <div class="project-card p-8 rounded-2xl group">
                     <div>
                         <div class="mb-4 flex items-center gap-2">
                             <span class="w-1 h-1 rounded-full bg-cyan-500"></span>
-                            <span class="text-slate-500 font-bold text-[9px] uppercase tracking-[0.25em]"> sep - dec
-                                2025</span>
+                            <span class="text-slate-500 font-bold text-[9px] uppercase tracking-[0.25em]">2025</span>
                         </div>
                         <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">Bikretaa POS</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed mb-6"> A Flutter-based shop management system
-                            built for inventory, sales, and customer tracking. Includes secure authentication, real-time
-                            analytics, and interactive dashboards powered by Firebase and REST APIs.
+                        <p class="text-slate-400 text-xs leading-relaxed line-clamp-3 mb-2 project-desc">
+                            A Flutter-based shop management system built for inventory, sales, and customer tracking.
+                            Includes secure authentication, real-time analytics, and interactive dashboards powered by
+                            Firebase.
                         </p>
+                        <button onclick="openModal(this)"
+                            class="text-cyan-400 text-[8px] font-bold uppercase tracking-wider hover:underline mb-4">Read
+                            More</button>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">MVVM</span>
-                            <span class="tech-tag">Riverpod</span>
-                            <span class="tech-tag">Google ML Kit</span>
                             <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">POS</span>
                         </div>
                     </div>
                     <a href="https://github.com/NazrulIslam991/Bikretaa" target="_blank"
-                        class="flex items-center gap-2 text-xs font-bold hover:text-cyan-400 transition-colors uppercase tracking-widest">
-                        GitHub <i class="fab fa-github"></i>
-                    </a>
-                </div>
-
-                <div class="project-card p-8 rounded-2xl group">
-                    <div>
-                        <div class="mb-4 flex items-center gap-2">
-                            <span class="w-1 h-1 rounded-full bg-cyan-500"></span>
-                            <span class="text-slate-500 font-bold text-[9px] uppercase tracking-[0.25em]"> sep - dec
-                                2025</span>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">Crafty Bay</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed mb-6">Full-scale commerce platform with REST
-                            API integration and custom cart logic.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-tag">GetX</span>
-                            <span class="tech-tag">REST API</span>
-                        </div>
-                    </div>
-                    <a href="https://github.com/NazrulIslam991/Crafty-Bay" target="_blank"
-                        class="flex items-center gap-2 text-xs font-bold hover:text-cyan-400 transition-colors uppercase tracking-widest">
-                        GitHub <i class="fab fa-github"></i>
-                    </a>
+                        class="flex items-center gap-2 text-xs font-bold hover:text-cyan-400 transition-colors mt-6">GITHUB
+                        <i class="fab fa-github"></i></a>
                 </div>
 
                 <div class="project-card p-8 rounded-2xl group border-amber-500/10">
                     <div>
                         <div class="mb-4 flex items-center gap-2">
-                            <span class="w-1 h-1 rounded-full bg-cyan-500"></span>
-                            <span class="text-slate-500 font-bold text-[9px] uppercase tracking-[0.25em]"> may - july
-                                2025</span>
+                            <span class="w-1 h-1 rounded-full bg-amber-500"></span>
+                            <span class="text-slate-500 font-bold text-[9px] uppercase tracking-[0.25em]">2025</span>
                         </div>
                         <h3 class="text-xl font-bold mb-3 group-hover:text-amber-400 transition-colors">Rent Rover</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed mb-6"> A Kotlin-based property rental app built
-                            with Firebase, featuring secure authentication, real-time chat, and smart listing management
-                            for seamless communication between landlords and users.
+                        <p class="text-slate-400 text-xs leading-relaxed line-clamp-3 mb-2 project-desc">
+                            A Kotlin-based property rental app built with Firebase, featuring secure authentication,
+                            real-time chat, and smart listing management for landlords and users.
                         </p>
+                        <button onclick="openModal(this)"
+                            class="text-cyan-400 text-[8px] font-bold uppercase tracking-wider hover:underline mb-4">Read
+                            More</button>
                         <div class="flex flex-wrap gap-2">
                             <span class="tech-tag">Kotlin</span>
                             <span class="tech-tag">Firebase</span>
                         </div>
                     </div>
                     <a href="https://github.com/NazrulIslam991/Rent-Rover" target="_blank"
-                        class="flex items-center gap-2 text-xs font-bold hover:text-amber-400 transition-colors uppercase tracking-widest">
-                        GitHub <i class="fab fa-github"></i>
-                    </a>
+                        class="flex items-center gap-2 text-xs font-bold hover:text-amber-400 transition-colors mt-6">GITHUB
+                        <i class="fab fa-github"></i></a>
                 </div>
-
-                <div class="project-card p-8 rounded-2xl group border-purple-500/10">
+                <div class="project-card p-8 rounded-2xl group border-purple-500/10 hover:border-purple-400/40">
                     <div>
-                        <div class="mb-4 text-purple-400 client-badge">Native Android</div>
+                        <div class="mb-4 flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-purple-500"></span>
+                            <span class="text-slate-500 font-bold text-[9px] uppercase tracking-[0.25em]">2024 • Native
+                                Android</span>
+                        </div>
                         <h3 class="text-xl font-bold mb-3 group-hover:text-purple-400 transition-colors">PetPassion</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed mb-6">E-commerce platform for local store
-                            management built with Java/Native tech.</p>
+                        <p class="text-slate-400 text-xs leading-relaxed line-clamp-3 mb-2 project-desc">
+                            A specialized e-commerce platform for local pet store management. Built natively with Java,
+                            featuring real-time inventory updates, customer order tracking, and Firebase-powered
+                            authentication.
+                        </p>
+                        <button onclick="openModal(this)"
+                            class="text-cyan-400 text-[8px] font-bold uppercase tracking-wider hover:underline mb-4">Read
+                            More</button>
                         <div class="flex flex-wrap gap-2">
                             <span class="tech-tag">Java</span>
                             <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Native SDK</span>
                         </div>
                     </div>
-                    <a href="#"
-                        class="flex items-center gap-2 text-xs font-bold hover:text-purple-400 transition-colors uppercase tracking-widest">
-                        Source Code <i class="fab fa-github"></i>
-                    </a>
+                    <a href="https://github.com/NazrulIslam991/PetPassion" target="_blank"
+                        class="flex items-center gap-2 text-xs font-bold hover:text-purple-400 transition-colors mt-6">GITHUB
+                        <i class="fab fa-github"></i></a>
                 </div>
             </div>
         </section>
@@ -370,43 +414,42 @@
                     <div>
                         <div class="mb-4 client-badge">Physics Game (2025)</div>
                         <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">Slice Storm</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed mb-6"> A fast-paced Flutter-based fruit slicing
-                            game inspired by arcade physics gameplay. Features smooth animations, swipe controls,
-                            scoring system, and immersive audio effects with progressive difficulty.
+                        <p class="text-slate-400 text-xs leading-relaxed line-clamp-3 mb-2 project-desc">
+                            A fast-paced Flutter-based fruit slicing game inspired by arcade physics gameplay. Features
+                            smooth animations, swipe controls, scoring system, and immersive audio effects.
                         </p>
+                        <button onclick="openModal(this)"
+                            class="text-cyan-400 text-[8px] font-bold uppercase tracking-wider hover:underline mb-4">Read
+                            More</button>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tech-tag">Flutter</span>
                             <span class="tech-tag">Flame Engine</span>
                             <span class="tech-tag">GetX</span>
-                            <span class="tech-tag">Audio System</span>
                         </div>
                     </div>
                     <a href="https://github.com/NazrulIslam991/Slice-Storm" target="_blank"
-                        class="flex items-center gap-2 text-xs font-bold hover:text-cyan-400 transition-colors uppercase tracking-widest">
-                        GitHub <i class="fab fa-github"></i>
-                    </a>
+                        class="flex items-center gap-2 text-xs font-bold hover:text-cyan-400 mt-6">GITHUB <i
+                            class="fab fa-github"></i></a>
                 </div>
                 <div class="project-card p-8 rounded-2xl group">
                     <div>
                         <div class="mb-4 client-badge">AI Logic game (2025)</div>
                         <h3 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">Tic Tac Toe AI
                         </h3>
-                        <p class="text-slate-400 text-xs leading-relaxed mb-6"> A Flutter-based Tic Tac Toe game
-                            featuring both multiplayer and AI mode. The AI is powered by the Minimax algorithm,
-                            delivering a challenging and strategic gameplay experience with smooth UI and score
-                            tracking.
+                        <p class="text-slate-400 text-xs leading-relaxed line-clamp-3 mb-2 project-desc">
+                            A Flutter-based Tic Tac Toe game featuring both multiplayer and AI mode powered by the
+                            Minimax algorithm, delivering a challenging strategic gameplay experience.
                         </p>
+                        <button onclick="openModal(this)"
+                            class="text-cyan-400 text-[8px] font-bold uppercase tracking-wider hover:underline mb-4">Read
+                            More</button>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Minimax Algorithm</span>
+                            <span class="tech-tag">Minimax</span>
                             <span class="tech-tag">AI Logic</span>
-                            <span class="tech-tag">Game UI</span>
                         </div>
                     </div>
                     <a href="https://github.com/NazrulIslam991/Tic-Tac-Toe" target="_blank"
-                        class="flex items-center gap-2 text-xs font-bold hover:text-cyan-400 transition-colors uppercase tracking-widest">
-                        GitHub <i class="fab fa-github"></i>
-                    </a>
+                        class="flex items-center gap-2 text-xs font-bold hover:text-cyan-400 mt-6">GITHUB <i
+                            class="fab fa-github"></i></a>
                 </div>
             </div>
         </section>
@@ -420,6 +463,43 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        const modal = document.getElementById('projectModal');
+        const modalContent = document.getElementById('modalContent');
+
+        function openModal(btn) {
+            const card = btn.closest('.project-card');
+            const title = card.querySelector('h3').innerText;
+            const desc = card.querySelector('.project-desc').innerText;
+            const tags = card.querySelector('.flex.flex-wrap').innerHTML;
+            const badge = card.querySelector('.mb-4').innerHTML;
+
+            modalContent.innerHTML = `
+                <div class="mb-4 text-xs font-mono uppercase tracking-widest text-slate-500 flex items-center gap-2">${badge}</div>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">${title}</h2>
+                <div class="text-slate-300 text-sm leading-relaxed mb-8 font-light max-h-[40vh] overflow-y-auto pr-4">
+                    ${desc}
+                </div>
+                <div class="flex flex-wrap gap-2 mb-8">${tags}</div>
+                <div class="flex justify-end">
+                    <button onclick="closeModal()" class="px-6 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-cyan-400 hover:text-black transition-all">Close</button>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) closeModal();
+        }
+    </script>
 </body>
 
 </html>
