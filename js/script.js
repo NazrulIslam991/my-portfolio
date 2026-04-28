@@ -31,15 +31,30 @@ const aboutData = {
         ]
     },
     skills: {
-        title: "Technical Arsenal",
-        subtitle: "Frameworks & Tools",
-        desc: "I utilize a modern tech stack to build scalable, production-ready applications.",
+        title: "Tech Stack & Ecosystem",
+        subtitle: "Performance & Scalability",
+        desc: "Leveraging Clean Architecture and high-performance libraries to transform complex requirements into robust, production-ready solutions.",
         categories: [
-            { label: "Languages", value: "Dart, Kotlin, Java, C, C++" },
-            { label: "Mobile Development", value: "Flutter (Android/iOS), Native Android (Java/Kotlin)" },
-            { label: "Backend/DB", value: "Firebase, REST API, Cloudinary" },
-            { label: "State Management", value: "GetX, Riverpod" },
-            { label: "Collaboration & Tools", value: "Git/GitHub, Agile/Scrum Workflows, MVVM Architecture, CI/CD Basics" }
+            {
+                label: "Mobile & Languages",
+                value: "Flutter, Dart, Native Android (Java/Kotlin), Cross-Platform Development, Responsive UI"
+            },
+            {
+                label: "Architecture & State",
+                value: "MVVM, Repository Pattern, OOP, Riverpod, GetX"
+            },
+            {
+                label: "API & Backend",
+                value: "RESTful APIs (Dio), JSON Parsing, JWT, Firebase (FCM), Socket.io, Cloudinary"
+            },
+            {
+                label: "Features & Integration",
+                value: "Google Maps, Stripe Payment, Real-time Tracking, OCR, Localization, Caching"
+            },
+            {
+                label: "Tools & Platforms",
+                value: "Git/GitHub, Postman, FVM, Android Studio, VS Code, SharedPreferences"
+            }
         ]
     },
     cert: {
