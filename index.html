@@ -1,671 +1,1270 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Md. Nazrul Islam Nayon | Flutter Developer</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap"
-        rel="stylesheet">
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<body class="text-slate-300 antialiased overflow-x-hidden">
+  <body class="text-slate-300 antialiased overflow-x-hidden">
+    <!-- **************==========****************** NavBar Section ***************====================***************** -->
+    <nav
+      class="fixed w-full z-50 bg-[#020617]/70 backdrop-blur-xl border-b border-white/10 transition-all duration-500"
+      id="navbar"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center"
+      >
+        <a
+          href="#"
+          class="text-lg sm:text-xl font-extrabold text-white tracking-tighter hover:scale-105 transition-transform duration-300"
+        >
+          <span class="text-purple-500">MD </span>NAZRUL<span
+            class="text-purple-400"
+            >.</span
+          >
+        </a>
+        <div
+          class="hidden md:flex space-x-6 lg:space-x-10 text-[10px] lg:text-[11px] uppercase tracking-[0.2em] font-bold text-slate-400"
+        >
+          <a
+            href="#home"
+            class="nav-link active hover:text-purple-400 transition-all duration-300 pb-1 hover:pb-0"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="nav-link hover:text-purple-400 transition-all duration-300 pb-1 hover:pb-0"
+            >About</a
+          >
 
-    <!-- Enhanced Navigation with backdrop blur -->
-    <nav class="fixed w-full z-50 bg-[#020617]/70 backdrop-blur-xl border-b border-white/10 transition-all duration-500"
-        id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
-            <a href="#"
-                class="text-lg sm:text-xl font-extrabold text-white tracking-tighter hover:scale-105 transition-transform duration-300">
-                <span class="text-purple-500">MD </span>NAZRUL<span class="text-purple-400">.</span>
-            </a>
-            <div
-                class="hidden md:flex space-x-6 lg:space-x-10 text-[10px] lg:text-[11px] uppercase tracking-[0.2em] font-bold text-slate-400">
-                <a href="#home"
-                    class="nav-link active hover:text-purple-400 transition-all duration-300 pb-1 hover:pb-0">Home</a>
-                <a href="#about"
-                    class="nav-link hover:text-purple-400 transition-all duration-300 pb-1 hover:pb-0">About</a>
+          <a
+            href="#projects"
+            class="nav-link hover:text-purple-400 transition-all duration-300 pb-1 hover:pb-0"
+            >Projects</a
+          >
+          <a
+            href="#experience"
+            class="nav-link hover:text-purple-400 transition-all duration-300 pb-1 hover:pb-0"
+            >Experience</a
+          >
 
-                <a href="#projects"
-                    class="nav-link hover:text-purple-400 transition-all duration-300 pb-1 hover:pb-0">Projects</a>
-                <a href="#experience"
-                    class="nav-link hover:text-purple-400 transition-all duration-300 pb-1 hover:pb-0">Experience</a>
-
-                <a href="#contact"
-                    class="nav-link hover:text-purple-400 transition-all duration-300 pb-1 hover:pb-0">Contact</a>
-            </div>
-            <button id="menuBtn"
-                class="md:hidden text-white text-2xl focus:outline-none transition-transform hover:scale-110"><i
-                    class="fas fa-bars"></i></button>
+          <a
+            href="#contact"
+            class="nav-link hover:text-purple-400 transition-all duration-300 pb-1 hover:pb-0"
+            >Contact</a
+          >
         </div>
-        <div id="mobileMenu"
-            class="hidden md:hidden bg-[#020617]/95 backdrop-blur-xl border-b border-white/10 px-4 py-4 flex flex-col space-y-3 text-sm font-bold uppercase tracking-wide animate-fadeInUp">
-            <a href="#home"
-                class="nav-link-mobile py-2 hover:text-purple-400 transition-all duration-300 hover:translate-x-2">Home</a>
-            <a href="#about"
-                class="nav-link-mobile py-2 hover:text-purple-400 transition-all duration-300 hover:translate-x-2">About</a>
+        <button
+          id="menuBtn"
+          class="md:hidden text-white text-2xl focus:outline-none transition-transform hover:scale-110"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden bg-[#020617]/95 backdrop-blur-xl border-b border-white/10 px-4 py-4 flex flex-col space-y-3 text-sm font-bold uppercase tracking-wide animate-fadeInUp"
+      >
+        <a
+          href="#home"
+          class="nav-link-mobile py-2 hover:text-purple-400 transition-all duration-300 hover:translate-x-2"
+          >Home</a
+        >
+        <a
+          href="#about"
+          class="nav-link-mobile py-2 hover:text-purple-400 transition-all duration-300 hover:translate-x-2"
+          >About</a
+        >
 
-            <a href="#projects"
-                class="nav-link-mobile py-2 hover:text-purple-400 transition-all duration-300 hover:translate-x-2">Projects</a>
-            <a href="#experience"
-                class="nav-link-mobile py-2 hover:text-purple-400 transition-all duration-300 hover:translate-x-2">Experience</a>
+        <a
+          href="#projects"
+          class="nav-link-mobile py-2 hover:text-purple-400 transition-all duration-300 hover:translate-x-2"
+          >Projects</a
+        >
+        <a
+          href="#experience"
+          class="nav-link-mobile py-2 hover:text-purple-400 transition-all duration-300 hover:translate-x-2"
+          >Experience</a
+        >
 
-            <a href="#contact"
-                class="nav-link-mobile py-2 hover:text-purple-400 transition-all duration-300 hover:translate-x-2">Contact</a>
-        </div>
+        <a
+          href="#contact"
+          class="nav-link-mobile py-2 hover:text-purple-400 transition-all duration-300 hover:translate-x-2"
+          >Contact</a
+        >
+      </div>
     </nav>
 
-    <!-- HOME Section with Typewriter Effect -->
-    <section id="home"
-        class="hero-gradient min-h-screen flex items-center px-4 sm:px-6 pt-24 md:pt-20 pb-16 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20 pointer-events-none">
-            <div class="absolute top-20 left-10 w-72 h-72 bg-purple-600 rounded-full blur-[100px] animate-pulse"></div>
-            <div
-                class="absolute bottom-20 right-10 w-96 h-96 bg-blue-600 rounded-full blur-[120px] animate-pulse delay-1000">
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
-            <div class="scroll-animate opacity-0 translate-y-8 text-center lg:text-left order-2 lg:order-1">
-                <p
-                    class="text-purple-400 font-semibold mb-3 tracking-[0.2em] sm:tracking-[0.3em] uppercase text-[11px] sm:text-xs animate-fadeIn">
-                    Hello, I'm</p>
-                <h1
-                    class="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-5 leading-tight tracking-tighter">
-                    Md. Nazrul Islam
-                    <span
-                        class="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 shimmer-text">Nayon</span>
-                </h1>
-                <div class="text-slate-300 text-base sm:text-lg mb-6">
-                    <span id="typed-text" class="font-semibold"></span>
-                    <span class="typewriter-cursor"></span>
-                </div>
-                <p
-                    class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 mb-7 animate-fadeInUp">
-                    A passionate Flutter Developer focused on building scalable, high-performance mobile applications
-                    using clean architecture and modern state management solutions.
-                </p>
-                <div
-                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-slate-400 text-[11px] sm:text-xs font-semibold tracking-widest uppercase mb-8 animate-pulse-glow">
-                    <span class="relative flex h-2 w-2"><span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span><span
-                            class="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span></span>
-                    Available for Opportunities
-                </div>
-                <div class="flex flex-wrap gap-4 justify-center lg:justify-start mb-10">
-                    <a href="https://drive.google.com/uc?export=download&id=1BsCN5kAd2sogk5dR_b2tmORTUT14DZWo"
-                        class="btn-ripple group bg-gradient-to-r from-purple-600 to-blue-600 hover:opacity-90 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold transition-all duration-500 shadow-xl shadow-purple-900/20 flex items-center gap-2 text-sm sm:text-base hover:shadow-2xl hover:shadow-purple-700/30 hover:-translate-y-1">
-                        <span>Download CV</span>
-                        <i
-                            class="fas fa-download text-xs sm:text-sm group-hover:translate-y-1 transition-transform duration-300"></i>
-                    </a>
-                    <div class="flex gap-3">
-                        <a href="https://github.com/NazrulIslam991" target="_blank"
-                            class="bg-slate-800/50 hover:bg-slate-700 text-white border border-slate-700 px-4 sm:px-5 py-3 sm:py-4 rounded-2xl font-bold transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20"><i
-                                class="fab fa-github text-lg sm:text-xl"></i></a>
-                        <a href="https://www.linkedin.com/in/nazrulislamnayon" target="_blank" rel="noopener noreferrer"
-                            class="bg-slate-800/50 hover:bg-slate-700 text-white border border-slate-700 px-4 sm:px-5 py-3 sm:py-4 rounded-2xl font-bold transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/20"><i
-                                class="fab fa-linkedin-in text-lg sm:text-xl"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="flex justify-center relative scroll-animate opacity-0 translate-x-8 order-1 lg:order-2">
-                <div class="relative w-full max-w-[280px] xs:max-w-sm sm:max-w-md group animate-float">
-                    <div
-                        class="absolute -inset-4 bg-gradient-to-tr from-purple-600 to-blue-600 rounded-[3rem] opacity-40 blur-2xl group-hover:opacity-80 transition-all duration-700">
-                    </div>
-                    <div
-                        class="relative rounded-2xl sm:rounded-[2.5rem] overflow-hidden border border-white/20 shadow-2xl transform transition-all duration-700 group-hover:scale-[1.05] group-hover:rotate-1">
-                        <img src="images/profile_image.png" alt="Profile"
-                            class="w-full object-cover transition-all duration-1000 group-hover:scale-110">
-                    </div>
-                    <div
-                        class="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-gradient-to-r from-purple-900/90 to-blue-900/90 backdrop-blur-md border border-white/20 px-3 py-2 sm:px-5 sm:py-3 rounded-xl sm:rounded-2xl shadow-xl animate-pulse-glow">
-                        <p class="text-white font-semibold text-[10px] sm:text-sm"><i class="fas fa-code mr-1"></i>
-                            Flutter Dev</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ABOUT Section with enhanced cards -->
-    <section id="about" class="py-20 sm:py-32 px-4 sm:px-6 bg-[#020617] relative overflow-hidden">
-        <div class="max-w-7xl mx-auto relative z-10">
-            <div class="mb-12 sm:mb-16 scroll-animate opacity-0 translate-y-8 text-center md:text-left">
-                <span
-                    class="text-emerald-500 text-[10px] sm:text-xs font-bold tracking-[0.3em] uppercase block mb-3 mono">Biography</span>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4">About Me</h2>
-                <div
-                    class="w-20 h-1.5 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full mx-auto md:mx-0 animate-pulse">
-                </div>
-            </div>
-
-            <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
-                <div class="lg:w-1/3 flex flex-col gap-4 scroll-animate opacity-0 -translate-x-8">
-                    <button onclick="updateAbout('bio')" id="btn-bio"
-                        class="about-nav-btn active group flex items-center gap-4 p-5 rounded-2xl border border-white/5 transition-all duration-300">
-                        <div
-                            class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="text-left">
-                            <span class="block text-white font-bold text-sm sm:text-base">About Me</span>
-                            <span class="text-[10px] text-slate-500 uppercase tracking-widest">Personal Info</span>
-                        </div>
-                    </button>
-
-                    <button onclick="updateAbout('edu')" id="btn-edu"
-                        class="about-nav-btn group flex items-center gap-4 p-5 rounded-2xl border border-white/5 transition-all duration-300">
-                        <div
-                            class="w-10 h-10 rounded-xl bg-slate-500/10 flex items-center justify-center text-slate-400 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="text-left">
-                            <span
-                                class="block text-slate-400 font-bold text-sm sm:text-base group-hover:text-white transition-colors">Education</span>
-                            <span class="text-[10px] text-slate-500 uppercase tracking-widest">Academic Journey</span>
-                        </div>
-                    </button>
-
-                    <button onclick="updateAbout('skills')" id="btn-skills"
-                        class="about-nav-btn group flex items-center gap-4 p-5 rounded-2xl border border-white/5 transition-all duration-300">
-                        <div
-                            class="w-10 h-10 rounded-xl bg-slate-500/10 flex items-center justify-center text-slate-400 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="text-left">
-                            <span
-                                class="block text-slate-400 font-bold text-sm sm:text-base group-hover:text-white transition-colors">Technical
-                                Skills</span>
-                            <span class="text-[10px] text-slate-500 uppercase tracking-widest">Core Stack</span>
-                        </div>
-                    </button>
-
-                    <button onclick="updateAbout('cert')" id="btn-cert"
-                        class="about-nav-btn group flex items-center gap-4 p-5 rounded-2xl border border-white/5 transition-all duration-300">
-                        <div
-                            class="w-10 h-10 rounded-xl bg-slate-500/10 flex items-center justify-center text-slate-400 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <div class="text-left">
-                            <span
-                                class="block text-slate-400 font-bold text-sm sm:text-base group-hover:text-white transition-colors">Certifications</span>
-                            <span class="text-[10px] text-slate-500 uppercase tracking-widest">Verified
-                                Credentials</span>
-                        </div>
-                    </button>
-                </div>
-
-                <div class="lg:w-2/3 scroll-animate opacity-0 translate-x-8">
-                    <div id="about-display-content"
-                        class="glass-card p-8 sm:p-12 rounded-[2.5rem] border border-white/10 min-h-[450px] relative overflow-hidden transition-all duration-500">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- PROJECTS Section with staggered animation -->
-    <section id="projects" class="py-16 sm:py-24 px-4 sm:px-6 bg-[#030303] text-white overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-            <div
-                class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-4 scroll-animate opacity-0 translate-y-8">
-                <div>
-                    <span
-                        class="text-[#4ade80] text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase mb-2 block relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-[#4ade80]/50 after:scale-x-0 hover:after:scale-x-100 after:transition-transform">Selected
-                        Works</span>
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter">My <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-[#4ade80] via-emerald-500 to-cyan-500 shimmer-text">Projects</span>
-                    </h2>
-                </div>
-                <p
-                    class="text-slate-400 text-xs sm:text-sm max-w-xs italic border-l-2 border-[#4ade80] pl-4 transition-all duration-300 hover:border-l-4 hover:pl-6">
-                    "Code is poetry, and these are my favorite verses."</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-6 gap-5 sm:gap-6 auto-rows-fr">
-
-                <div
-                    class="md:col-span-4 project-card group relative bg-[#0A0A0A] rounded-2xl sm:rounded-3xl border border-white/5 overflow-hidden hover:border-[#4ade80]/40 transition-all duration-700">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-br from-[#4ade80]/0 to-transparent group-hover:from-[#4ade80]/10 transition-all duration-700">
-                    </div>
-                    <div class="p-6 sm:p-8 h-full flex flex-col justify-between relative z-10">
-                        <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <span
-                                    class="bg-[#4ade80]/10 text-[#4ade80] text-[9px] px-2 py-1 rounded-full font-bold uppercase">Enterprise
-                                    POS</span>
-                                <a href="https://github.com/NazrulIslam991/Bikretaa" target="_blank"
-                                    class="text-white/40 hover:text-[#4ade80] transition-all duration-300 hover:scale-110"><i
-                                        class="fab fa-github text-xl sm:text-2xl"></i></a>
-                            </div>
-                            <h3 class="text-xl sm:text-2xl font-bold mb-2 group-hover:text-[#4ade80] transition-colors">
-                                Bikretaa POS</h3>
-                            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6"> Bikretaa is an
-                                enterprise-grade POS and shop management ecosystem. It offers full control over
-                                inventory, sales tracking, and customer management with real-time analytics. Key
-                                features include automated invoice generation, stock expiry alerts, and an admin
-                                dashboard for performance monitoring. Integrated with AI-driven business tools and a QR
-                                scanner, it provides a seamless, high-performance experience for retail productivity.
-                            </p>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded">Flutter</span>
-                            <span class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded">MVVM</span>
-                            <span class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded">API</span>
-                            <span
-                                class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded">Firebase</span>
-                            <span class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded">Local
-                                DB</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    class="md:col-span-2 project-card group bg-[#0A0A0A] rounded-2xl sm:rounded-3xl border border-white/5 p-6 sm:p-8 hover:border-emerald-500/40 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between relative overflow-hidden">
-                    <div
-                        class="absolute -right-10 -top-10 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700">
-                    </div>
-                    <div class="relative z-10">
-                        <div class="flex justify-between items-start mb-4">
-                            <i class="fas fa-utensils text-2xl text-emerald-500/50"></i>
-                            <a href="#" class="text-white/20 hover:text-emerald-500 transition-all"><i
-                                    class="fab fa-github text-lg"></i></a>
-                        </div>
-                        <h3 class="text-lg sm:text-xl font-bold mb-2 group-hover:text-emerald-400 transition-colors">
-                            Menu Assists</h3>
-                        <p class="text-slate-500 text-[11px] sm:text-xs mb-4 leading-relaxed"> Menu Assists is a
-                            collaborative Flutter app that simplifies healthy dining through smart menu scanning. It
-                            provides personalized dish recommendations based on users' dietary goals, featuring a health
-                            dashboard, nutritional tracking, and real-time restaurant discovery. By merging intuitive UI
-                            with data-driven insights, it empowers users to maintain a healthy lifestyle while eating
-                            out.
-                        </p>
-                    </div>
-                    <div class="relative z-10 pt-4 border-t border-white/5 flex flex-wrap gap-2">
-                        <span
-                            class="text-[8px] font-mono text-emerald-400/60 bg-emerald-400/5 px-1.5 py-0.5 rounded">Flutter</span>
-                        <span
-                            class="text-[8px] font-mono text-emerald-400/60 bg-emerald-400/5 px-1.5 py-0.5 rounded">Riverpod</span>
-                        <span
-                            class="text-[8px] font-mono text-emerald-400/60 bg-emerald-400/5 px-1.5 py-0.5 rounded">MVVM</span>
-                            <span
-                            class="text-[8px] font-mono text-emerald-400/60 bg-emerald-400/5 px-1.5 py-0.5 rounded">API integration</span>
-                            <span
-                            class="text-[8px] font-mono text-emerald-400/60 bg-emerald-400/5 px-1.5 py-0.5 rounded">Flutter</span>
-                    </div>
-                </div>
-
-                <div
-                    class="md:col-span-2 project-card group bg-[#0A0A0A] rounded-2xl sm:rounded-3xl border border-white/5 p-6 sm:p-8 hover:border-amber-500/40 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <i class="fas fa-home text-2xl text-amber-500/50"></i>
-                            <a href="https://github.com/NazrulIslam991/Rent-Rover" target="_blank"
-                                class="text-white/40 hover:text-amber-500 transition-all"><i
-                                    class="fab fa-github text-xl"></i></a>
-                        </div>
-                        <h3 class="text-lg sm:text-xl font-bold mb-2 group-hover:text-amber-400 transition-colors">Rent
-                            Rover</h3>
-                        <p class="text-slate-500 text-[11px] sm:text-xs mb-4"> A modern rental marketplace app built for
-                            Bangladesh, developed using Kotlin and Firebase. Rent Rover allows tenants to find suitable
-                            homes and landlords to post rental listings easily. The app includes secure authentication,
-                            real-time chat, smart filtering, and a smooth user experience from search to communication.
-
-
-                        </p>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span
-                            class="text-[9px] font-mono text-amber-500/60 bg-amber-500/5 px-2 py-1 rounded">Kotlin</span>
-                        <span
-                            class="text-[9px] font-mono text-amber-500/60 bg-amber-500/5 px-2 py-1 rounded">Firebase</span>
-                    </div>
-                </div>
-
-                <div
-                    class="md:col-span-4 project-card group relative bg-[#0A0A0A] rounded-2xl sm:rounded-3xl border border-white/5 overflow-hidden hover:border-red-500/40 transition-all duration-700">
-                    <div
-                        class="absolute inset-0 bg-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                    </div>
-                    <div class="p-6 sm:p-8 h-full flex flex-col justify-between relative z-10">
-                        <div class="flex flex-col md:flex-row gap-6">
-                            <div class="flex-1">
-                                <div class="flex justify-between items-start mb-4">
-                                    <span
-                                        class="bg-red-500/10 text-red-500 text-[9px] px-2 py-1 rounded-full font-bold uppercase">Community
-                                        Support</span>
-                                    <a href="#" class="text-white/20 hover:text-red-500 transition-all"><i
-                                            class="fab fa-github text-xl"></i></a>
-                                </div>
-                                <h3
-                                    class="text-xl sm:text-2xl font-bold mb-2 group-hover:text-red-400 transition-colors">
-                                    Community Support</h3>
-                                <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
-                                <p class="text-slate-400 text-xs leading-relaxed mb-6">
-                                    Community Support is an emergency response ecosystem connecting help-seekers with
-                                    volunteers. As the sole UI developer, I built a high-performance interface featuring
-                                    real-time coordination via chat, video calling, and a live crisis map. It integrates
-                                    critical tools like an SOS Panic Button with social features for community updates,
-                                    ensuring seamless aid tracking and intuitive navigation in high-stress scenarios.
-                                </p>
-                                </p>
-                            </div>
-                            <div class="hidden md:flex flex-col justify-center w-40 border-l border-white/5 pl-6 gap-2">
-                                <span class="text-[10px] text-red-400/80 font-bold">Flutter</span>
-                                <span class="text-[10px] text-red-400/80 font-bold">MVVM</span>
-                                <span class="text-[10px] text-red-400/80 font-bold">Riverpod</span>
-                                <span class="text-[10px] text-red-400/80 font-bold">Socket.io</span>
-
-                            </div>
-                        </div>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span
-                                class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded">Flutter</span>
-                            <span class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded">MVVM</span>
-                            <span
-                                class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded">Riverpod</span>
-                            <span class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded">API
-                                Integration</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    class="md:col-span-3 project-card group bg-[#0A0A0A] rounded-2xl sm:rounded-3xl border border-white/5 p-6 sm:p-8 hover:border-blue-500/40 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between relative overflow-hidden">
-                    <div
-                        class="absolute -right-10 -top-10 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700">
-                    </div>
-                    <div class="relative z-10">
-                        <div class="flex justify-between items-start mb-4">
-                            <i class="fas fa-running text-2xl text-blue-500/50"></i>
-                            <a href="#" class="text-white/20 hover:text-blue-400 transition-all"><i
-                                    class="fab fa-github text-xl"></i></a>
-                        </div>
-                        <h3 class="text-lg sm:text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors">
-                            CoachMe</h3>
-                        <p class="text-slate-500 text-[11px] sm:text-xs mb-4 leading-relaxed">
-                        <p class="text-slate-400 text-xs leading-relaxed mb-6">
-                            CoachMe is a robust Flutter ecosystem bridging athletes and coaches. It features session
-                            booking, secure payments, and real-time chat, alongside a dedicated coach dashboard for
-                            managing subscriptions and premium content. Developed collaboratively, the app also
-                            integrates a full marketplace for sports products and services. It showcases complex
-                            business logic, efficient API integration, and a high-performance UI tailored for a seamless
-                            user experience.
-                        </p>
-                        </p>
-                    </div>
-                    <div class="relative z-10 pt-4 border-t border-white/5 flex flex-wrap gap-2">
-                        <span
-                            class="text-[8px] font-mono text-blue-400/60 bg-blue-400/5 px-1.5 py-0.5 rounded">Flutter</span>
-                        <span
-                            class="text-[8px] font-mono text-blue-400/60 bg-blue-400/5 px-1.5 py-0.5 rounded">MVVM</span>
-                        <span
-                            class="text-[8px] font-mono text-blue-400/60 bg-blue-400/5 px-1.5 py-0.5 rounded">Riverpod</span>
-                        <span
-                            class="text-[8px] font-mono text-blue-400/60 bg-blue-400/5 px-1.5 py-0.5 rounded">API</span>
-                        <span class="text-[8px] font-mono text-blue-400/60 bg-blue-400/5 px-1.5 py-0.5 rounded">Local
-                            db</span>
-                        <span
-                            class="text-[8px] font-mono text-blue-400/60 bg-blue-400/5 px-1.5 py-0.5 rounded">Socket.io</span>
-                    </div>
-                </div>
-
-                <div
-                    class="md:col-span-3 project-card group bg-[#0A0A0A] rounded-2xl sm:rounded-3xl border border-white/5 p-6 sm:p-8 hover:border-purple-500/40 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between relative overflow-hidden">
-                    <div
-                        class="absolute -right-10 -top-10 w-32 h-32 bg-purple-500/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700">
-                    </div>
-                    <div class="relative z-10">
-                        <div class="flex justify-between items-start mb-4">
-                            <i class="fas fa-paw text-2xl text-purple-500/50"></i>
-                            <a href="#" class="text-white/20 hover:text-purple-500 transition-all"><i
-                                    class="fab fa-github text-xl"></i></a>
-                        </div>
-                        <h3 class="text-lg sm:text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">
-                            PetPassion</h3>
-                        <p class="text-slate-500 text-[11px] sm:text-xs mb-4 leading-relaxed">Android e-commerce
-                            platform built with Java and Firebase, optimized for real-time inventory management and user
-                            profiles.</p>
-                    </div>
-                    <div class="relative z-10 pt-4 border-t border-white/5 flex flex-wrap gap-2">
-                        <span
-                            class="text-[8px] font-mono text-purple-400/60 bg-purple-400/5 px-1.5 py-0.5 rounded">Java</span>
-                        <span
-                            class="text-[8px] font-mono text-purple-400/60 bg-purple-400/5 px-1.5 py-0.5 rounded">Firebase</span>
-                        <span
-                            class="text-[8px] font-mono text-purple-400/60 bg-purple-400/5 px-1.5 py-0.5 rounded">Native
-                            Android</span>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="mt-14 sm:mt-20 text-center">
-                <a href="projects.html"
-                    class="btn-ripple group relative inline-flex items-center gap-2 bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-[10px] sm:text-xs uppercase tracking-widest hover:bg-[#4ade80] transition-all duration-500 hover:shadow-2xl hover:scale-105">
-                    Explore Full Archive <i
-                        class="fas fa-arrow-right group-hover:translate-x-2 transition-transform duration-300"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- EXPERIENCE & CONTACT sections with same enhanced animations (keeping structure identical but animations improved) -->
-    <section id="experience" class="py-16 sm:py-24 px-4 sm:px-6 bg-[#020617]">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-12 sm:mb-16 scroll-animate opacity-0 translate-y-8 text-center md:text-left"><span
-                    class="text-emerald-500 text-[10px] sm:text-xs font-bold tracking-[0.3em] uppercase block mb-2 mono">Professional
-                    Journey</span>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4">Milestones</h2>
-                <div
-                    class="w-20 h-1.5 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full mx-auto md:mx-0 animate-pulse">
-                </div>
-            </div>
-            <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-                <div id="exp-nav" class="lg:col-span-4 space-y-3 sm:space-y-4 scroll-animate opacity-0 -translate-x-8">
-                    <div onclick="updateExperience('junior')" id="nav-junior"
-                        class="exp-nav-item group relative p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-white/5 border-l-4 border-emerald-500 glass-card cursor-pointer transition-all duration-300 hover:scale-[1.02]">
-                        <h4 class="text-white font-bold text-sm sm:text-base">Junior Flutter Developer</h4>
-                        <p class="text-[10px] sm:text-xs text-slate-500 uppercase tracking-widest mt-1">Softvence Delta
-                        </p><span
-                            class="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-emerald-500 opacity-20 group-hover:opacity-100 transition-all group-hover:translate-x-1"><i
-                                class="fas fa-chevron-right text-xs sm:text-sm"></i></span>
-                    </div>
-                    <div onclick="updateExperience('trainee')" id="nav-trainee"
-                        class="exp-nav-item p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-white/[0.02] border-l-4 border-transparent hover:bg-white/5 transition-all duration-300 cursor-pointer hover:scale-[1.02]">
-                        <h4 class="text-slate-400 font-bold hover:text-white text-sm sm:text-base">Trainee Flutter
-                            Developer</h4>
-                        <p class="text-[10px] sm:text-xs text-slate-500 uppercase tracking-widest mt-1">Softvence Delta
-                        </p>
-                    </div>
-                    <div onclick="updateExperience('bsc')" id="nav-bsc"
-                        class="exp-nav-item p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-white/[0.02] border-l-4 border-transparent hover:bg-white/5 transition-all duration-300 cursor-pointer hover:scale-[1.02]">
-                        <h4 class="text-slate-400 font-bold hover:text-white text-sm sm:text-base">B.Sc. in CSE</h4>
-                        <p class="text-[10px] sm:text-xs text-slate-500 uppercase tracking-widest mt-1">Leading
-                            University</p>
-                    </div>
-                </div>
-                <div class="lg:col-span-8 scroll-animate opacity-0 translate-x-8">
-                    <div id="experience-content"
-                        class="glass-card p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-[2.5rem] relative overflow-hidden min-h-[450px] sm:min-h-[500px] transition-all duration-500">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section id="contact" class="py-16 sm:py-20 px-4 sm:px-6 bg-[#020617] overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-12 scroll-animate text-center md:text-left">
-                <span class="text-emerald-500 text-[10px] font-bold tracking-[0.4em] uppercase block mb-2 mono">Get In
-                    Touch</span>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4">Let's Build Something Great</h2>
-                <div class="w-16 h-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full mx-auto md:mx-0"></div>
-            </div>
-
-            <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
-                <div class="lg:col-span-2 space-y-6 scroll-animate">
-                    <div
-                        class="bg-[#0f172a]/50 p-6 sm:p-8 rounded-3xl border border-white/5 backdrop-blur-xl transition-all hover:border-emerald-500/20">
-                        <h4 class="text-white font-bold mb-6 text-lg">Contact Information</h4>
-
-                        <div class="space-y-6">
-                            <div class="flex items-center gap-4 group">
-                                <div
-                                    class="w-10 h-10 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-black transition-all">
-                                    <i class="fas fa-envelope text-sm"></i>
-                                </div>
-                                <div>
-                                    <p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Email Me
-                                    </p>
-                                    <a href="mailto:nazrulislamnayon991@gmail.com"
-                                        class="text-sm text-slate-300 hover:text-emerald-400 transition-all font-medium">nazrulislamnayon991@gmail.com</a>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center gap-4 group">
-                                <div
-                                    class="w-10 h-10 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-black transition-all">
-                                    <i class="fas fa-map-marker-alt text-sm"></i>
-                                </div>
-                                <div>
-                                    <p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Current
-                                        Location</p>
-                                    <p class="text-sm text-slate-300 font-medium">Banasree, Rampura, Dhaka</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div
-                        class="relative rounded-3xl overflow-hidden border border-white/5 h-56 sm:h-64 grayscale hover:grayscale-0 transition-all duration-700 hover:scale-[1.01] shadow-2xl">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.902633099719!2d90.4286774!3d23.7508605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b80153400a0b%3A0x6335439486c9e054!2sBanasree%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1700000000000"
-                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                        <div class="absolute inset-0 pointer-events-none border-[12px] border-[#020617]/10 rounded-3xl">
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    class="lg:col-span-3 bg-[#0f172a]/30 p-6 sm:p-10 border border-white/5 rounded-3xl shadow-2xl backdrop-blur-sm scroll-animate">
-                    <form action="https://formspree.io/f/xnjrvpbz" method="POST">
-                        <div class="grid sm:grid-cols-2 gap-5">
-                            <div class="space-y-2">
-                                <label class="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-bold ml-1">Full
-                                    Name</label>
-                                <input type="text" name="name" placeholder="John Doe" required
-                                    class="w-full px-5 py-4 bg-[#020617]/50 border border-white/10 focus:border-emerald-500/50 outline-none transition-all rounded-2xl text-white text-sm focus:bg-[#020617]">
-                            </div>
-                            <div class="space-y-2">
-                                <label
-                                    class="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-bold ml-1">Email
-                                    Address</label>
-                                <input type="email" name="email" placeholder="email@example.com" required
-                                    class="w-full px-5 py-4 bg-[#020617]/50 border border-white/10 focus:border-emerald-500/50 outline-none transition-all rounded-2xl text-white text-sm focus:bg-[#020617]">
-                            </div>
-                        </div>
-
-                        <div class="space-y-2">
-                            <label
-                                class="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-bold ml-1">Subject</label>
-                            <input type="text" name="subject" placeholder="App Development Inquiry" required
-                                class="w-full px-5 py-4 bg-[#020617]/50 border border-white/10 focus:border-emerald-500/50 outline-none transition-all rounded-2xl text-white text-sm focus:bg-[#020617]">
-                        </div>
-
-                        <div class="space-y-2">
-                            <label
-                                class="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-bold ml-1">Message</label>
-                            <textarea name="message" rows="5" placeholder="Tell me about your project vision..."
-                                required
-                                class="w-full px-5 py-4 bg-[#020617]/50 border border-white/10 focus:border-emerald-500/50 outline-none transition-all rounded-2xl text-white text-sm resize-none focus:bg-[#020617]"></textarea>
-                        </div>
-
-                        <button type="submit"
-                            class="group relative w-full bg-emerald-500 hover:bg-emerald-400 text-black font-black py-4 rounded-2xl transition-all duration-300 flex items-center justify-center gap-3 tracking-[0.2em] text-[11px] uppercase shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:-translate-y-1">
-                            Send Message
-                            <i
-                                class="fas fa-paper-plane group-hover:translate-x-2 group-hover:-translate-y-1 transition-all duration-300"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="py-12 sm:py-16 bg-[#020617] border-t border-white/5 relative overflow-hidden">
+    <!-- **************==========****************** About Section ***************====================***************** -->
+    <section
+      id="home"
+      class="hero-gradient min-h-screen flex items-center px-4 sm:px-6 pt-24 md:pt-20 pb-16 relative overflow-hidden"
+    >
+      <div class="absolute inset-0 opacity-20 pointer-events-none">
         <div
-            class="absolute -bottom-24 -left-24 w-64 h-64 bg-emerald-500/5 blur-[100px] rounded-full pointer-events-none">
-        </div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-10 md:gap-6">
-
-                <div class="text-center md:text-left group">
-                    <div
-                        class="text-white font-black text-2xl sm:text-3xl tracking-tighter mb-2 transition-all duration-300">
-                        Nazrul<span class="text-emerald-500">.</span>
-                    </div>
-                    <p
-                        class="text-[9px] sm:text-[10px] text-slate-400 uppercase tracking-[0.4em] font-medium leading-relaxed">
-                        Building Scalable <span class="text-emerald-500/80">Flutter</span> Experiences
-                    </p>
-                    <a href="mailto:nazrulislamnayon991@gmail.com"
-                        class="mt-3 inline-block text-[10px] text-slate-500 hover:text-emerald-400 transition-colors lowercase tracking-widest border-b border-white/5 hover:border-emerald-500/30 pb-0.5">
-                        nazrulislamnayon991@gmail.com
-                    </a>
-                </div>
-
-                <div class="flex items-center gap-4">
-                    <a href="https://github.com/NazrulIslam991" target="_blank" aria-label="GitHub"
-                        class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl border border-white/5 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/5 hover:border-white/20 transition-all duration-500 hover:-translate-y-1 shadow-lg shadow-black/20">
-                        <i class="fab fa-github text-lg"></i>
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/nazrulislamnayon" target="_blank" aria-label="LinkedIn"
-                        class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl border border-white/5 flex items-center justify-center text-slate-400 hover:text-[#0077b5] hover:bg-[#0077b5]/10 hover:border-[#0077b5]/20 transition-all duration-500 hover:-translate-y-1 shadow-lg shadow-black/20">
-                        <i class="fab fa-linkedin-in text-lg"></i>
-                    </a>
-
-                    <a href="https://wa.me/8801951246224" target="_blank" aria-label="WhatsApp"
-                        class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl border border-white/5 flex items-center justify-center text-slate-400 hover:text-[#25d366] hover:bg-[#25d366]/10 hover:border-[#25d366]/20 transition-all duration-500 hover:-translate-y-1 shadow-lg shadow-black/20">
-                        <i class="fab fa-whatsapp text-lg"></i>
-                    </a>
-                </div>
-
-                <div class="flex flex-col items-center md:items-end">
-                    <div
-                        class="flex items-center gap-2 text-[10px] sm:text-[11px] text-slate-300 uppercase tracking-[0.2em] mb-2 font-bold bg-white/5 px-4 py-1.5 rounded-full border border-white/5">
-                        <span class="relative flex h-2 w-2">
-                            <span
-                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                        </span>
-                        Banasree, Dhaka
-                    </div>
-                    <p class="text-[9px] text-slate-600 tracking-wider uppercase font-medium">
-                        © 2026 Md. Nazrul Islam Nayon. <span class="hidden sm:inline">Crafted with Flutter &
-                            Love.</span>
-                    </p>
-                </div>
-
+          class="absolute top-20 left-10 w-72 h-72 bg-purple-600 rounded-full blur-[100px] animate-pulse"
+        ></div>
+        <div
+          class="absolute bottom-20 right-10 w-96 h-96 bg-blue-600 rounded-full blur-[120px] animate-pulse delay-1000"
+        ></div>
+      </div>
+      <div
+        class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10"
+      >
+        <div
+          class="scroll-animate opacity-0 translate-y-8 text-center lg:text-left order-2 lg:order-1"
+        >
+          <p
+            class="text-purple-400 font-semibold mb-3 tracking-[0.2em] sm:tracking-[0.3em] uppercase text-[11px] sm:text-xs animate-fadeIn"
+          >
+            Hello, I'm
+          </p>
+          <h1
+            class="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-5 leading-tight tracking-tighter"
+          >
+            Md. Nazrul Islam
+            <span
+              class="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 shimmer-text"
+              >Nayon</span
+            >
+          </h1>
+          <div class="text-slate-300 text-base sm:text-lg mb-6">
+            <span id="typed-text" class="font-semibold"></span>
+            <span class="typewriter-cursor"></span>
+          </div>
+          <p
+            class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 mb-7 animate-fadeInUp"
+          >
+            A passionate Flutter Developer focused on building scalable,
+            high-performance mobile applications using clean architecture and
+            modern state management solutions.
+          </p>
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-slate-400 text-[11px] sm:text-xs font-semibold tracking-widest uppercase mb-8 animate-pulse-glow"
+          >
+            <span class="relative flex h-2 w-2"
+              ><span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"
+              ></span
+              ><span
+                class="relative inline-flex rounded-full h-2 w-2 bg-purple-500"
+              ></span
+            ></span>
+            Available for Opportunities
+          </div>
+          <div
+            class="flex flex-wrap gap-4 justify-center lg:justify-start mb-10"
+          >
+            <a
+              href="https://drive.google.com/uc?export=download&id=1BsCN5kAd2sogk5dR_b2tmORTUT14DZWo"
+              class="btn-ripple group bg-gradient-to-r from-purple-600 to-blue-600 hover:opacity-90 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold transition-all duration-500 shadow-xl shadow-purple-900/20 flex items-center gap-2 text-sm sm:text-base hover:shadow-2xl hover:shadow-purple-700/30 hover:-translate-y-1"
+            >
+              <span>Download CV</span>
+              <i
+                class="fas fa-download text-xs sm:text-sm group-hover:translate-y-1 transition-transform duration-300"
+              ></i>
+            </a>
+            <div class="flex gap-3">
+              <a
+                href="https://github.com/NazrulIslam991"
+                target="_blank"
+                class="bg-slate-800/50 hover:bg-slate-700 text-white border border-slate-700 px-4 sm:px-5 py-3 sm:py-4 rounded-2xl font-bold transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20"
+                ><i class="fab fa-github text-lg sm:text-xl"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/nazrulislamnayon"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-slate-800/50 hover:bg-slate-700 text-white border border-slate-700 px-4 sm:px-5 py-3 sm:py-4 rounded-2xl font-bold transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/20"
+                ><i class="fab fa-linkedin-in text-lg sm:text-xl"></i
+              ></a>
             </div>
+          </div>
         </div>
+        <div
+          class="flex justify-center relative scroll-animate opacity-0 translate-x-8 order-1 lg:order-2"
+        >
+          <div
+            class="relative w-full max-w-[280px] xs:max-w-sm sm:max-w-md group animate-float"
+          >
+            <div
+              class="absolute -inset-4 bg-gradient-to-tr from-purple-600 to-blue-600 rounded-[3rem] opacity-40 blur-2xl group-hover:opacity-80 transition-all duration-700"
+            ></div>
+            <div
+              class="relative rounded-2xl sm:rounded-[2.5rem] overflow-hidden border border-white/20 shadow-2xl transform transition-all duration-700 group-hover:scale-[1.05] group-hover:rotate-1"
+            >
+              <img
+                src="images/profile_image.png"
+                alt="Profile"
+                class="w-full object-cover transition-all duration-1000 group-hover:scale-110"
+              />
+            </div>
+            <div
+              class="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-gradient-to-r from-purple-900/90 to-blue-900/90 backdrop-blur-md border border-white/20 px-3 py-2 sm:px-5 sm:py-3 rounded-xl sm:rounded-2xl shadow-xl animate-pulse-glow"
+            >
+              <p class="text-white font-semibold text-[10px] sm:text-sm">
+                <i class="fas fa-code mr-1"></i> Flutter Dev
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- **************==========****************** About Section ***************====================***************** -->
+    <section
+      id="about"
+      class="py-20 sm:py-32 px-4 sm:px-6 bg-[#020617] relative overflow-hidden"
+    >
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div
+          class="mb-12 sm:mb-16 scroll-animate opacity-0 translate-y-8 text-center md:text-left"
+        >
+          <span
+            class="text-emerald-500 text-[10px] sm:text-xs font-bold tracking-[0.3em] uppercase block mb-3 mono"
+            >Biography</span
+          >
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4"
+          >
+            About Me
+          </h2>
+          <div
+            class="w-20 h-1.5 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full mx-auto md:mx-0 animate-pulse"
+          ></div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+          <div
+            class="lg:w-1/3 flex flex-col gap-4 scroll-animate opacity-0 -translate-x-8"
+          >
+            <button
+              onclick="updateAbout('bio')"
+              id="btn-bio"
+              class="about-nav-btn active group flex items-center gap-4 p-5 rounded-2xl border border-white/5 transition-all duration-300"
+            >
+              <div
+                class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover:scale-110 transition-transform"
+              >
+                <i class="fas fa-user"></i>
+              </div>
+              <div class="text-left">
+                <span class="block text-white font-bold text-sm sm:text-base"
+                  >About Me</span
+                >
+                <span
+                  class="text-[10px] text-slate-500 uppercase tracking-widest"
+                  >Personal Info</span
+                >
+              </div>
+            </button>
+
+            <button
+              onclick="updateAbout('edu')"
+              id="btn-edu"
+              class="about-nav-btn group flex items-center gap-4 p-5 rounded-2xl border border-white/5 transition-all duration-300"
+            >
+              <div
+                class="w-10 h-10 rounded-xl bg-slate-500/10 flex items-center justify-center text-slate-400 group-hover:scale-110 transition-transform"
+              >
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="text-left">
+                <span
+                  class="block text-slate-400 font-bold text-sm sm:text-base group-hover:text-white transition-colors"
+                  >Education</span
+                >
+                <span
+                  class="text-[10px] text-slate-500 uppercase tracking-widest"
+                  >Academic Journey</span
+                >
+              </div>
+            </button>
+
+            <button
+              onclick="updateAbout('skills')"
+              id="btn-skills"
+              class="about-nav-btn group flex items-center gap-4 p-5 rounded-2xl border border-white/5 transition-all duration-300"
+            >
+              <div
+                class="w-10 h-10 rounded-xl bg-slate-500/10 flex items-center justify-center text-slate-400 group-hover:scale-110 transition-transform"
+              >
+                <i class="fas fa-code"></i>
+              </div>
+              <div class="text-left">
+                <span
+                  class="block text-slate-400 font-bold text-sm sm:text-base group-hover:text-white transition-colors"
+                  >Technical Skills</span
+                >
+                <span
+                  class="text-[10px] text-slate-500 uppercase tracking-widest"
+                  >Core Stack</span
+                >
+              </div>
+            </button>
+
+            <button
+              onclick="updateAbout('cert')"
+              id="btn-cert"
+              class="about-nav-btn group flex items-center gap-4 p-5 rounded-2xl border border-white/5 transition-all duration-300"
+            >
+              <div
+                class="w-10 h-10 rounded-xl bg-slate-500/10 flex items-center justify-center text-slate-400 group-hover:scale-110 transition-transform"
+              >
+                <i class="fas fa-certificate"></i>
+              </div>
+              <div class="text-left">
+                <span
+                  class="block text-slate-400 font-bold text-sm sm:text-base group-hover:text-white transition-colors"
+                  >Certifications</span
+                >
+                <span
+                  class="text-[10px] text-slate-500 uppercase tracking-widest"
+                  >Verified Credentials</span
+                >
+              </div>
+            </button>
+          </div>
+
+          <div class="lg:w-2/3 scroll-animate opacity-0 translate-x-8">
+            <div
+              id="about-display-content"
+              class="glass-card p-8 sm:p-12 rounded-[2.5rem] border border-white/10 min-h-[450px] relative overflow-hidden transition-all duration-500"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- **************==========****************** PROJECTS Section ***************====================***************** -->
+    <section
+      id="projects"
+      class="py-16 sm:py-24 px-4 sm:px-6 bg-[#030303] text-white overflow-hidden"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-4 scroll-animate opacity-0 translate-y-8"
+        >
+          <div>
+            <span
+              class="text-[#4ade80] text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase mb-2 block relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-[#4ade80]/50 after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
+              >Selected Works</span
+            >
+            <h2
+              class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter"
+            >
+              My
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-[#4ade80] via-emerald-500 to-cyan-500 shimmer-text"
+                >Projects</span
+              >
+            </h2>
+          </div>
+          <p
+            class="text-slate-400 text-xs sm:text-sm max-w-xs italic border-l-2 border-[#4ade80] pl-4 transition-all duration-300 hover:border-l-4 hover:pl-6"
+          >
+            "Code is poetry, and these are my favorite verses."
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- ******************** 1. Bikretaa App ************************ -->
+          <div
+            class="project-card group relative bg-[#0A0A0A] rounded-2xl sm:rounded-3xl border border-white/5 overflow-hidden hover:border-[#4ade80]/40 transition-all duration-700 flex flex-col justify-between"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-[#4ade80]/0 to-transparent group-hover:from-[#4ade80]/10 transition-all duration-700 pointer-events-none"
+            ></div>
+            <div>
+              <div
+                class="project-slider relative w-full h-40 sm:h-48 overflow-hidden"
+              >
+                <div
+                  class="slider flex transition-transform duration-500 w-full h-full"
+                >
+                  <img
+                    src="images/bikretaa_1.jpeg"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                  <img
+                    src="images/bikretaa_2.jpeg"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                  <img
+                    src="images/bikretaa_3.jpeg"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                  <img
+                    src="images/bikretaa_4.jpeg"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                </div>
+
+                <button
+                  class="prev absolute top-1/2 left-3 -translate-y-1/2 bg-black/50 text-white w-8 h-8 rounded-full"
+                >
+                  ❮
+                </button>
+                <button
+                  class="next absolute top-1/2 right-3 -translate-y-1/2 bg-black/50 text-white w-8 h-8 rounded-full"
+                >
+                  ❯
+                </button>
+              </div>
+              <div class="p-6 sm:p-8">
+                <div class="flex justify-between items-start mb-4">
+                  <span
+                    class="bg-[#4ade80]/10 text-[#4ade80] text-[9px] px-2 py-1 rounded-full font-bold uppercase"
+                    >Enterprise POS</span
+                  >
+                  <a
+                    href="https://github.com/NazrulIslam991/Bikretaa"
+                    target="_blank"
+                    class="text-white/40 hover:text-[#4ade80] transition-all duration-300 hover:scale-110"
+                  >
+                    <i class="fab fa-github text-xl sm:text-2xl"></i>
+                  </a>
+                </div>
+                <h3
+                  class="text-xl sm:text-2xl font-bold mb-2 group-hover:text-[#4ade80] transition-colors"
+                >
+                  Bikretaa POS
+                </h3>
+                <p
+                  class="text-slate-500 text-[11px] sm:text-xs leading-relaxed mb-4"
+                >
+                  Bikretaa is an enterprise-grade POS and shop management
+                  ecosystem. It offers full control over inventory, sales
+                  tracking, and customer management with real-time analytics.
+                </p>
+              </div>
+            </div>
+            <div
+              class="px-6 pb-6 sm:px-8 sm:pb-8 flex flex-wrap gap-2 relative z-10"
+            >
+              <span
+                class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded"
+                >Flutter</span
+              >
+              <span
+                class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded"
+                >MVVM</span
+              >
+              <span
+                class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded"
+                >API</span
+              >
+              <span
+                class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded"
+                >Firebase</span
+              >
+              <span
+                class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded"
+                >Local DB</span
+              >
+            </div>
+          </div>
+
+          <!-- ******************************** 2. Menu Assist App *********************************** -->
+          <div
+            class="project-card group bg-[#0A0A0A] rounded-2xl sm:rounded-3xl border border-white/5 overflow-hidden hover:border-emerald-500/40 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between relative"
+          >
+            <div
+              class="absolute -right-10 -top-10 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700 pointer-events-none"
+            ></div>
+            <div>
+              <div
+                class="project-slider relative w-full h-40 sm:h-48 overflow-hidden"
+              >
+                <div
+                  class="slider flex transition-transform duration-500 w-full h-full"
+                >
+                  <img
+                    src="images/menu_cover_2.jpg"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                  <img
+                    src="images/menu_auth.jpg"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                  <img
+                    src="images/menu_1.jpg"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                  <img
+                    src="images/menu_2.jpg"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                </div>
+
+                <button
+                  class="prev absolute top-1/2 left-3 -translate-y-1/2 bg-black/50 text-white w-8 h-8 rounded-full"
+                >
+                  ❮
+                </button>
+                <button
+                  class="next absolute top-1/2 right-3 -translate-y-1/2 bg-black/50 text-white w-8 h-8 rounded-full"
+                >
+                  ❯
+                </button>
+              </div>
+              <div class="p-6 sm:p-8 relative z-10">
+                <div class="flex justify-between items-start mb-4">
+                  <span
+                    class="bg-[#4ade80]/10 text-[#4ade80] text-[9px] px-2 py-1 rounded-full font-bold uppercase"
+                    >AI-Powered Smart Dining Assistant</span
+                  >
+                  <a
+                    href="https://github.com/NazrulIslam991/Bikretaa"
+                    target="_blank"
+                    class="text-white/40 hover:text-[#4ade80] transition-all duration-300 hover:scale-110"
+                  >
+                    <i class="fab fa-github text-xl sm:text-2xl"></i>
+                  </a>
+                </div>
+                <h3
+                  class="text-lg sm:text-xl font-bold mb-2 group-hover:text-emerald-400 transition-colors"
+                >
+                  Menu Assists
+                </h3>
+                <p
+                  class="text-slate-500 text-[11px] sm:text-xs leading-relaxed mb-4"
+                >
+                  Menu Assists is a collaborative Flutter app that simplifies
+                  healthy dining through smart menu scanning. It provides
+                  personalized dish recommendations based on users' dietary
+                  goals.
+                </p>
+              </div>
+            </div>
+            <div
+              class="px-6 pb-6 sm:px-8 sm:pb-8 relative z-10 border-t border-white/5 pt-4 flex flex-wrap gap-2"
+            >
+              <span
+                class="text-[8px] font-mono text-emerald-400/60 bg-emerald-400/5 px-1.5 py-0.5 rounded"
+                >Flutter</span
+              >
+              <span
+                class="text-[8px] font-mono text-emerald-400/60 bg-emerald-400/5 px-1.5 py-0.5 rounded"
+                >Riverpod</span
+              >
+              <span
+                class="text-[8px] font-mono text-emerald-400/60 bg-emerald-400/5 px-1.5 py-0.5 rounded"
+                >MVVM</span
+              >
+              <span
+                class="text-[8px] font-mono text-emerald-400/60 bg-emerald-400/5 px-1.5 py-0.5 rounded"
+                >API integration</span
+              >
+            </div>
+          </div>
+
+          <!-- ******************** 3. Stability App ************************ -->
+
+          <div
+            class="project-card group bg-[#0A0A0A] rounded-2xl sm:rounded-3xl border border-white/5 overflow-hidden hover:border-amber-500/40 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between"
+          >
+            <div>
+              <div
+                class="project-slider relative w-full h-40 sm:h-48 overflow-hidden"
+              >
+                <div
+                  class="slider flex transition-transform duration-500 w-full h-full"
+                >
+                  <img
+                    src="images/stability_cover.jpg"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                  <img
+                    src="images/stability_1.jpg"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                  <img
+                    src="images/stability_2.jpg"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                </div>
+
+                <button
+                  class="prev absolute top-1/2 left-3 -translate-y-1/2 bg-black/50 text-white w-8 h-8 rounded-full"
+                >
+                  ❮
+                </button>
+                <button
+                  class="next absolute top-1/2 right-3 -translate-y-1/2 bg-black/50 text-white w-8 h-8 rounded-full"
+                >
+                  ❯
+                </button>
+              </div>
+              <div class="p-6 sm:p-8">
+                <div class="flex justify-between items-start mb-4">
+                  <span
+                    class="bg-[#4ade80]/10 text-[#4ade80] text-[9px] px-2 py-1 rounded-full font-bold uppercase"
+                    >Personal Finance & Budget Tracker</span
+                  >
+                  <a
+                    href="https://github.com/NazrulIslam991/Bikretaa"
+                    target="_blank"
+                    class="text-white/40 hover:text-[#4ade80] transition-all duration-300 hover:scale-110"
+                  >
+                    <i class="fab fa-github text-xl sm:text-2xl"></i>
+                  </a>
+                </div>
+                <h3
+                  class="text-lg sm:text-xl font-bold mb-2 group-hover:text-amber-400 transition-colors"
+                >
+                  STABILITY
+                </h3>
+                <p
+                  class="text-slate-500 text-[11px] sm:text-xs leading-relaxed mb-4"
+                >
+                  STABILITY is a personal finance app built with Flutter that
+                  calculates users’ safe-to-spend money by analyzing income,
+                  expenses, and savings goals in real time. It includes secure
+                  login, onboarding, and dynamic financial tracking with a clean
+                  UI for easy money management.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 sm:px-8 sm:pb-8 flex flex-wrap gap-2">
+              <span
+                class="text-[9px] font-mono text-amber-500/60 bg-amber-500/5 px-2 py-1 rounded"
+                >Kotlin</span
+              >
+              <span
+                class="text-[9px] font-mono text-amber-500/60 bg-amber-500/5 px-2 py-1 rounded"
+                >Firebase</span
+              >
+            </div>
+          </div>
+
+          <!-- ******************** 4. Vendly App ************************ -->
+
+          <div
+            class="project-card group relative bg-[#0A0A0A] rounded-2xl sm:rounded-3xl border border-white/5 overflow-hidden hover:border-red-500/40 transition-all duration-700 flex flex-col justify-between"
+          >
+            <div
+              class="absolute inset-0 bg-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+            ></div>
+            <div>
+              <div
+                class="project-slider relative w-full h-40 sm:h-48 overflow-hidden"
+              >
+                <div
+                  class="slider flex transition-transform duration-500 w-full h-full"
+                >
+                  <img
+                    src="images/vendly_cover.jpg"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                  <img
+                    src="images/vendly_1.jpg"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                  <img
+                    src="images/vendly_2.jpg"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                  <img
+                    src="images/vendly_3.jpg"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                  <img
+                    src="images/vendly_4.jpg"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                </div>
+
+                <button
+                  class="prev absolute top-1/2 left-3 -translate-y-1/2 bg-black/50 text-white w-8 h-8 rounded-full"
+                >
+                  ❮
+                </button>
+                <button
+                  class="next absolute top-1/2 right-3 -translate-y-1/2 bg-black/50 text-white w-8 h-8 rounded-full"
+                >
+                  ❯
+                </button>
+              </div>
+              <div class="p-6 sm:p-8 relative z-10">
+                <div class="flex justify-between items-start mb-4">
+                  <span
+                    class="bg-red-500/10 text-red-500 text-[9px] px-2 py-1 rounded-full font-bold uppercase"
+                    >Multi-Vendor Service Marketplace</span
+                  >
+                  <a
+                    href="#"
+                    class="text-white/20 hover:text-red-500 transition-all"
+                    ><i class="fab fa-github text-xl"></i
+                  ></a>
+                </div>
+                <h3
+                  class="text-xl sm:text-2xl font-bold mb-2 group-hover:text-red-400 transition-colors"
+                >
+                  Vendly
+                </h3>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                  Vendly is a Flutter-based multi-role marketplace app
+                  connecting customers, vendors, and event planners for booking
+                  and service management. I built a clean, responsive UI using
+                  Clean Architecture for a smooth and simple user experience.
+                </p>
+              </div>
+            </div>
+            <div
+              class="px-6 pb-6 sm:px-8 sm:pb-8 flex flex-wrap gap-2 relative z-10 mt-2"
+            >
+              <span
+                class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded"
+                >Flutter</span
+              >
+              <span
+                class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded"
+                >MVVM</span
+              >
+              <span
+                class="text-[9px] font-mono text-slate-500 bg-white/5 px-2 py-1 rounded"
+                >Riverpod</span
+              >
+            </div>
+          </div>
+
+          <!-- ******************************** 5. Coach Me App *********************************** -->
+
+          <div
+            class="project-card group bg-[#0A0A0A] rounded-2xl sm:rounded-3xl border border-white/5 overflow-hidden hover:border-blue-500/40 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between relative"
+          >
+            <div
+              class="absolute -right-10 -top-10 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700 pointer-events-none"
+            ></div>
+            <div>
+              <div
+                class="project-slider relative w-full h-40 sm:h-48 overflow-hidden"
+              >
+                <div
+                  class="slider flex transition-transform duration-500 w-full h-full"
+                >
+                  <img
+                    src="images/coach_1.jpeg"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                  <img
+                    src="images/coach_2.jpeg"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                  <img
+                    src="images/coach_3.jpeg"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                </div>
+
+                <button
+                  class="prev absolute top-1/2 left-3 -translate-y-1/2 bg-black/50 text-white w-8 h-8 rounded-full"
+                >
+                  ❮
+                </button>
+                <button
+                  class="next absolute top-1/2 right-3 -translate-y-1/2 bg-black/50 text-white w-8 h-8 rounded-full"
+                >
+                  ❯
+                </button>
+              </div>
+              <div class="p-6 sm:p-8 relative z-10">
+                <div class="flex justify-between items-start mb-4">
+                  <span
+                    class="bg-[#4ade80]/10 text-[#4ade80] text-[9px] px-2 py-1 rounded-full font-bold uppercase"
+                    >Fitness Coaching & Booking Platform</span
+                  >
+                  <a
+                    href="https://github.com/NazrulIslam991/Bikretaa"
+                    target="_blank"
+                    class="text-white/40 hover:text-[#4ade80] transition-all duration-300 hover:scale-110"
+                  >
+                    <i class="fab fa-github text-xl sm:text-2xl"></i>
+                  </a>
+                </div>
+                <h3
+                  class="text-lg sm:text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors"
+                >
+                  CoachMe
+                </h3>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                  CoachMe is a robust Flutter ecosystem bridging athletes and
+                  coaches. It features session booking, secure payments,
+                  real-time chat, and a dedicated coach dashboard.
+                </p>
+              </div>
+            </div>
+            <div
+              class="px-6 pb-6 sm:px-8 sm:pb-8 relative z-10 border-t border-white/5 pt-4 flex flex-wrap gap-2"
+            >
+              <span
+                class="text-[8px] font-mono text-blue-400/60 bg-blue-400/5 px-1.5 py-0.5 rounded"
+                >Flutter</span
+              >
+              <span
+                class="text-[8px] font-mono text-blue-400/60 bg-blue-400/5 px-1.5 py-0.5 rounded"
+                >MVVM</span
+              >
+              <span
+                class="text-[8px] font-mono text-blue-400/60 bg-blue-400/5 px-1.5 py-0.5 rounded"
+                >Riverpod</span
+              >
+            </div>
+          </div>
+          <!-- ******************************** 6. Slice Storm Mobile Game *********************************** -->
+          <div
+            class="project-card group bg-[#0A0A0A] rounded-2xl sm:rounded-3xl border border-white/5 overflow-hidden hover:border-purple-500/40 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between relative"
+          >
+            <div
+              class="absolute -right-10 -top-10 w-32 h-32 bg-purple-500/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700 pointer-events-none"
+            ></div>
+            <div>
+              <div
+                class="project-slider relative w-full h-40 sm:h-48 overflow-hidden"
+              >
+                <div
+                  class="slider flex transition-transform duration-500 w-full h-full"
+                >
+                  <img
+                    src="images/empty.png"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                  <img
+                    src="images/empty.png"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                  <img
+                    src="images/empty.png"
+                    class="w-full h-full object-cover flex-shrink-0"
+                  />
+                </div>
+
+                <button
+                  class="prev absolute top-1/2 left-3 -translate-y-1/2 bg-black/50 text-white w-8 h-8 rounded-full"
+                >
+                  ❮
+                </button>
+                <button
+                  class="next absolute top-1/2 right-3 -translate-y-1/2 bg-black/50 text-white w-8 h-8 rounded-full"
+                >
+                  ❯
+                </button>
+              </div>
+              <div class="p-6 sm:p-8 relative z-10">
+                <div class="flex justify-between items-start mb-4">
+                  <span
+                    class="bg-[#4ade80]/10 text-[#4ade80] text-[9px] px-2 py-1 rounded-full font-bold uppercase"
+                    >Arcade Fruit Slicing Game</span
+                  >
+                  <a
+                    href="https://github.com/NazrulIslam991/Bikretaa"
+                    target="_blank"
+                    class="text-white/40 hover:text-[#4ade80] transition-all duration-300 hover:scale-110"
+                  >
+                    <i class="fab fa-github text-xl sm:text-2xl"></i>
+                  </a>
+                </div>
+                <h3
+                  class="text-lg sm:text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors"
+                >
+                  Slice Storm Mobile Game
+                </h3>
+                <p
+                  class="text-slate-500 text-[11px] sm:text-xs leading-relaxed mb-4"
+                >
+                  A fast-paced Flutter-based fruit slicing game inspired by
+                  arcade physics gameplay. Features smooth animations, swipe
+                  controls, scoring system, and immersive audio effects.
+                </p>
+              </div>
+            </div>
+            <div
+              class="px-6 pb-6 sm:px-8 sm:pb-8 relative z-10 border-t border-white/5 pt-4 flex flex-wrap gap-2"
+            >
+              <span
+                class="text-[8px] font-mono text-purple-400/60 bg-purple-400/5 px-1.5 py-0.5 rounded"
+                >Java</span
+              >
+              <span
+                class="text-[8px] font-mono text-purple-400/60 bg-purple-400/5 px-1.5 py-0.5 rounded"
+                >Firebase</span
+              >
+              <span
+                class="text-[8px] font-mono text-purple-400/60 bg-purple-400/5 px-1.5 py-0.5 rounded"
+                >Native</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-14 sm:mt-20 text-center">
+          <a
+            href="projects.html"
+            class="btn-ripple group relative inline-flex items-center gap-2 bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-[10px] sm:text-xs uppercase tracking-widest hover:bg-[#4ade80] transition-all duration-500 hover:shadow-2xl hover:scale-105"
+          >
+            Explore Full Archive
+            <i
+              class="fas fa-arrow-right group-hover:translate-x-2 transition-transform duration-300"
+            ></i>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- **************==========****************** Experience Section ***************====================***************** -->
+    <section id="experience" class="py-16 sm:py-24 px-4 sm:px-6 bg-[#020617]">
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="mb-12 sm:mb-16 scroll-animate opacity-0 translate-y-8 text-center md:text-left"
+        >
+          <span
+            class="text-emerald-500 text-[10px] sm:text-xs font-bold tracking-[0.3em] uppercase block mb-2 mono"
+            >Professional Journey</span
+          >
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4"
+          >
+            Milestones
+          </h2>
+          <div
+            class="w-20 h-1.5 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full mx-auto md:mx-0 animate-pulse"
+          ></div>
+        </div>
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          <div
+            id="exp-nav"
+            class="lg:col-span-4 space-y-3 sm:space-y-4 scroll-animate opacity-0 -translate-x-8"
+          >
+            <div
+              onclick="updateExperience('junior')"
+              id="nav-junior"
+              class="exp-nav-item group relative p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-white/5 border-l-4 border-emerald-500 glass-card cursor-pointer transition-all duration-300 hover:scale-[1.02]"
+            >
+              <h4 class="text-white font-bold text-sm sm:text-base">
+                Junior Flutter Developer
+              </h4>
+              <p
+                class="text-[10px] sm:text-xs text-slate-500 uppercase tracking-widest mt-1"
+              >
+                Softvence Delta
+              </p>
+              <span
+                class="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-emerald-500 opacity-20 group-hover:opacity-100 transition-all group-hover:translate-x-1"
+                ><i class="fas fa-chevron-right text-xs sm:text-sm"></i
+              ></span>
+            </div>
+            <div
+              onclick="updateExperience('trainee')"
+              id="nav-trainee"
+              class="exp-nav-item p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-white/[0.02] border-l-4 border-transparent hover:bg-white/5 transition-all duration-300 cursor-pointer hover:scale-[1.02]"
+            >
+              <h4
+                class="text-slate-400 font-bold hover:text-white text-sm sm:text-base"
+              >
+                Trainee Flutter Developer
+              </h4>
+              <p
+                class="text-[10px] sm:text-xs text-slate-500 uppercase tracking-widest mt-1"
+              >
+                Softvence Delta
+              </p>
+            </div>
+            <div
+              onclick="updateExperience('bsc')"
+              id="nav-bsc"
+              class="exp-nav-item p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-white/[0.02] border-l-4 border-transparent hover:bg-white/5 transition-all duration-300 cursor-pointer hover:scale-[1.02]"
+            >
+              <h4
+                class="text-slate-400 font-bold hover:text-white text-sm sm:text-base"
+              >
+                B.Sc. in CSE
+              </h4>
+              <p
+                class="text-[10px] sm:text-xs text-slate-500 uppercase tracking-widest mt-1"
+              >
+                Leading University
+              </p>
+            </div>
+          </div>
+          <div class="lg:col-span-8 scroll-animate opacity-0 translate-x-8">
+            <div
+              id="experience-content"
+              class="glass-card p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-[2.5rem] relative overflow-hidden min-h-[450px] sm:min-h-[500px] transition-all duration-500"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- **************==========****************** Contact Section ***************====================***************** -->
+
+    <section
+      id="contact"
+      class="py-16 sm:py-20 px-4 sm:px-6 bg-[#020617] overflow-hidden"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-12 scroll-animate text-center md:text-left">
+          <span
+            class="text-emerald-500 text-[10px] font-bold tracking-[0.4em] uppercase block mb-2 mono"
+            >Get In Touch</span
+          >
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4"
+          >
+            Let's Build Something Great
+          </h2>
+          <div
+            class="w-16 h-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full mx-auto md:mx-0"
+          ></div>
+        </div>
+
+        <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+          <div class="lg:col-span-2 space-y-6 scroll-animate">
+            <div
+              class="bg-[#0f172a]/50 p-6 sm:p-8 rounded-3xl border border-white/5 backdrop-blur-xl transition-all hover:border-emerald-500/20"
+            >
+              <h4 class="text-white font-bold mb-6 text-lg">
+                Contact Information
+              </h4>
+
+              <div class="space-y-6">
+                <div class="flex items-center gap-4 group">
+                  <div
+                    class="w-10 h-10 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-black transition-all"
+                  >
+                    <i class="fas fa-envelope text-sm"></i>
+                  </div>
+                  <div>
+                    <p
+                      class="text-[10px] uppercase tracking-widest text-slate-500 font-bold"
+                    >
+                      Email Me
+                    </p>
+                    <a
+                      href="mailto:nazrulislamnayon991@gmail.com"
+                      class="text-sm text-slate-300 hover:text-emerald-400 transition-all font-medium"
+                      >nazrulislamnayon991@gmail.com</a
+                    >
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-4 group">
+                  <div
+                    class="w-10 h-10 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-black transition-all"
+                  >
+                    <i class="fas fa-map-marker-alt text-sm"></i>
+                  </div>
+                  <div>
+                    <p
+                      class="text-[10px] uppercase tracking-widest text-slate-500 font-bold"
+                    >
+                      Current Location
+                    </p>
+                    <p class="text-sm text-slate-300 font-medium">
+                      Banasree, Rampura, Dhaka
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="relative rounded-3xl overflow-hidden border border-white/5 h-56 sm:h-64 grayscale hover:grayscale-0 transition-all duration-700 hover:scale-[1.01] shadow-2xl"
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.902633099719!2d90.4286774!3d23.7508605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b80153400a0b%3A0x6335439486c9e054!2sBanasree%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1700000000000"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
+              <div
+                class="absolute inset-0 pointer-events-none border-[12px] border-[#020617]/10 rounded-3xl"
+              ></div>
+            </div>
+          </div>
+
+          <div
+            class="lg:col-span-3 bg-[#0f172a]/30 p-6 sm:p-10 border border-white/5 rounded-3xl shadow-2xl backdrop-blur-sm scroll-animate"
+          >
+            <form action="https://formspree.io/f/xnjrvpbz" method="POST">
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div class="space-y-2">
+                  <label
+                    class="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-bold ml-1"
+                    >Full Name</label
+                  >
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="John Doe"
+                    required
+                    class="w-full px-5 py-4 bg-[#020617]/50 border border-white/10 focus:border-emerald-500/50 outline-none transition-all rounded-2xl text-white text-sm focus:bg-[#020617]"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label
+                    class="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-bold ml-1"
+                    >Email Address</label
+                  >
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="email@example.com"
+                    required
+                    class="w-full px-5 py-4 bg-[#020617]/50 border border-white/10 focus:border-emerald-500/50 outline-none transition-all rounded-2xl text-white text-sm focus:bg-[#020617]"
+                  />
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <label
+                  class="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-bold ml-1"
+                  >Subject</label
+                >
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="App Development Inquiry"
+                  required
+                  class="w-full px-5 py-4 bg-[#020617]/50 border border-white/10 focus:border-emerald-500/50 outline-none transition-all rounded-2xl text-white text-sm focus:bg-[#020617]"
+                />
+              </div>
+
+              <div class="space-y-2">
+                <label
+                  class="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-bold ml-1"
+                  >Message</label
+                >
+                <textarea
+                  name="message"
+                  rows="5"
+                  placeholder="Tell me about your project vision..."
+                  required
+                  class="w-full px-5 py-4 bg-[#020617]/50 border border-white/10 focus:border-emerald-500/50 outline-none transition-all rounded-2xl text-white text-sm resize-none focus:bg-[#020617]"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="group relative w-full bg-emerald-500 hover:bg-emerald-400 text-black font-black py-4 rounded-2xl transition-all duration-300 flex items-center justify-center gap-3 tracking-[0.2em] text-[11px] uppercase shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:-translate-y-1"
+              >
+                Send Message
+                <i
+                  class="fas fa-paper-plane group-hover:translate-x-2 group-hover:-translate-y-1 transition-all duration-300"
+                ></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- **************==========****************** Footer Section ***************====================***************** -->
+
+    <footer
+      class="py-12 sm:py-16 bg-[#020617] border-t border-white/5 relative overflow-hidden"
+    >
+      <div
+        class="absolute -bottom-24 -left-24 w-64 h-64 bg-emerald-500/5 blur-[100px] rounded-full pointer-events-none"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-10 md:gap-6"
+        >
+          <div class="text-center md:text-left group">
+            <div
+              class="text-white font-black text-2xl sm:text-3xl tracking-tighter mb-2 transition-all duration-300"
+            >
+              Nazrul<span class="text-emerald-500">.</span>
+            </div>
+            <p
+              class="text-[9px] sm:text-[10px] text-slate-400 uppercase tracking-[0.4em] font-medium leading-relaxed"
+            >
+              Building Scalable
+              <span class="text-emerald-500/80">Flutter</span> Experiences
+            </p>
+            <a
+              href="mailto:nazrulislamnayon991@gmail.com"
+              class="mt-3 inline-block text-[10px] text-slate-500 hover:text-emerald-400 transition-colors lowercase tracking-widest border-b border-white/5 hover:border-emerald-500/30 pb-0.5"
+            >
+              nazrulislamnayon991@gmail.com
+            </a>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <a
+              href="https://github.com/NazrulIslam991"
+              target="_blank"
+              aria-label="GitHub"
+              class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl border border-white/5 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/5 hover:border-white/20 transition-all duration-500 hover:-translate-y-1 shadow-lg shadow-black/20"
+            >
+              <i class="fab fa-github text-lg"></i>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/nazrulislamnayon"
+              target="_blank"
+              aria-label="LinkedIn"
+              class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl border border-white/5 flex items-center justify-center text-slate-400 hover:text-[#0077b5] hover:bg-[#0077b5]/10 hover:border-[#0077b5]/20 transition-all duration-500 hover:-translate-y-1 shadow-lg shadow-black/20"
+            >
+              <i class="fab fa-linkedin-in text-lg"></i>
+            </a>
+
+            <a
+              href="https://wa.me/8801951246224"
+              target="_blank"
+              aria-label="WhatsApp"
+              class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl border border-white/5 flex items-center justify-center text-slate-400 hover:text-[#25d366] hover:bg-[#25d366]/10 hover:border-[#25d366]/20 transition-all duration-500 hover:-translate-y-1 shadow-lg shadow-black/20"
+            >
+              <i class="fab fa-whatsapp text-lg"></i>
+            </a>
+          </div>
+
+          <div class="flex flex-col items-center md:items-end">
+            <div
+              class="flex items-center gap-2 text-[10px] sm:text-[11px] text-slate-300 uppercase tracking-[0.2em] mb-2 font-bold bg-white/5 px-4 py-1.5 rounded-full border border-white/5"
+            >
+              <span class="relative flex h-2 w-2">
+                <span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"
+                ></span>
+                <span
+                  class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"
+                ></span>
+              </span>
+              Banasree, Dhaka
+            </div>
+            <p
+              class="text-[9px] text-slate-600 tracking-wider uppercase font-medium"
+            >
+              © 2026 Md. Nazrul Islam Nayon.
+              <span class="hidden sm:inline">Crafted with Flutter & Love.</span>
+            </p>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script src="js/script.js"></script>
-</body>
-
+  </body>
 </html>
