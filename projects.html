@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Archive | Nazrul Islam</title>
+    <title>Archive</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
@@ -13,178 +13,14 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
       rel="stylesheet"
     />
-
-    <!-- ****************************** Style *******************************************-->
-    <style>
-      :root {
-        --accent: #00f2ff;
-        --bg: #050505;
-        --card-bg: rgba(255, 255, 255, 0.03);
-      }
-
-      body {
-        background: var(--bg);
-        color: #e2e8f0;
-        scroll-behavior: smooth;
-        font-family: "Plus Jakarta Sans", sans-serif;
-        overflow-x: hidden;
-      }
-
-      .glow {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 500px;
-        height: 500px;
-        background: radial-gradient(
-          circle,
-          rgba(0, 242, 255, 0.05) 0%,
-          transparent 70%
-        );
-        z-index: -1;
-        pointer-events: none;
-      }
-
-      .project-card {
-        background: var(--card-bg);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        position: relative;
-
-        flex: 0 0 auto;
-        width: 360px;
-        max-width: 90vw;
-      }
-
-      /* Tablet */
-      @media (min-width: 768px) {
-        .project-card {
-          min-width: 330px;
-        }
-      }
-
-      /* Desktop */
-      @media (min-width: 1024px) {
-        .project-card {
-          min-width: 440px;
-        }
-      }
-      .image-slider {
-        width: 100%;
-        height: 260px;
-        overflow: hidden;
-        position: relative;
-      }
-
-      .slides {
-        display: flex;
-        width: 100%;
-        height: 100%;
-      }
-
-      .slides img {
-        min-width: 100%;
-        height: 100%;
-        object-fit: cover;
-        flex-shrink: 0;
-        display: block;
-      }
-
-      @media (min-width: 768px) {
-        .image-slider img {
-          height: 220px;
-          object-fit: cover;
-        }
-      }
-
-      @media (min-width: 1024px) {
-        .image-slider img {
-          height: 260px;
-          object-fit: cover;
-        }
-      }
-
-      .project-card:hover {
-        border-color: var(--accent);
-        background: rgba(0, 242, 255, 0.02);
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px -20px rgba(0, 242, 255, 0.2);
-      }
-
-      .tech-tag {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        color: #94a3b8;
-        padding: 2px 10px;
-        border-radius: 4px;
-        font-size: 10px;
-        font-weight: 700;
-        text-transform: uppercase;
-      }
-
-      .scroll-container {
-        display: flex;
-        overflow-x: auto;
-        gap: 1.5rem;
-        padding: 2rem 0;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .project-card {
-        scroll-snap-align: start;
-      }
-
-      .scroll-container::-webkit-scrollbar {
-        display: none;
-      }
-
-      .section-header {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .line {
-        height: 1px;
-        flex-grow: 1;
-        background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
-        opacity: 0.3;
-      }
-
-      /* Modal styling */
-      #projectModal {
-        display: none;
-        backdrop-filter: blur(12px);
-      }
-
-      .modal-animate {
-        animation: modalFadeUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-      }
-
-      @keyframes modalFadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(40px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="css/style2.css" />
   </head>
 
   <body class="selection:bg-cyan-500/30">
     <div class="glow"></div>
 
     <div class="w-full">
+      <!-- ****************************** Header Section *******************************************-->
       <header class="pt-16 md:pt-24 px-6 md:px-12 mb-24">
         <a
           href="index.html"
@@ -280,7 +116,7 @@
               <h3
                 class="text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors"
               >
-                Learnify – AI Powered Smart Learning App
+                Learnify - AI Powered Smart Learning App
               </h3>
               <p
                 class="text-slate-400 text-xs leading-relaxed line-clamp-3 mb-2 project-desc"
@@ -1364,111 +1200,6 @@
         </div>
       </footer>
     </div>
-
-    <!-- ****************************** JS *******************************************-->
-    <script>
-      const modal = document.getElementById("projectModal");
-      const modalContent = document.getElementById("modalContent");
-
-      function openModal(btn) {
-        const card = btn.closest(".project-card");
-
-        const title = card.querySelector("h3")?.innerText || "";
-        const desc = card.querySelector(".project-desc")?.innerText || "";
-
-        // badge fix (first badge only)
-        const badge =
-          card.querySelector(".text-slate-500")?.innerHTML ||
-          card.querySelector(".client-badge")?.innerHTML ||
-          "";
-
-        // tags fix (ONLY tech tags)
-        const tagsContainer = card.querySelectorAll(".tech-tag");
-        let tagsHTML = "";
-
-        tagsContainer.forEach((tag) => {
-          tagsHTML += `<span class="tech-tag">${tag.innerText}</span>`;
-        });
-
-        modalContent.innerHTML = `
-    <div class="mb-4 text-xs font-mono uppercase tracking-widest text-slate-500 flex items-center gap-2">
-      ${badge}
-    </div>
-
-    <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">
-      ${title}
-    </h2>
-
-    <div class="text-slate-300 text-sm leading-relaxed mb-8 font-light max-h-[40vh] overflow-y-auto pr-4">
-      ${desc}
-    </div>
-
-    <div class="flex flex-wrap gap-2 mb-8">
-      ${tagsHTML}
-    </div>
-
-    <div class="flex justify-end">
-      <button onclick="closeModal()" class="px-6 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-cyan-400 hover:text-black transition-all">
-        Close
-      </button>
-    </div>
-  `;
-
-        modal.style.display = "flex";
-        document.body.style.overflow = "hidden";
-      }
-
-      function closeModal() {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto";
-      }
-
-      window.onclick = function (event) {
-        if (event.target == modal) closeModal();
-      };
-
-      // IMAGE SLIDER FIX (CLEAN VERSION)
-      document.querySelectorAll(".image-slider").forEach((slider) => {
-        const slides = slider.querySelector(".slides");
-        const images = slider.querySelectorAll("img");
-        const nextBtn = slider.querySelector(".next");
-        const prevBtn = slider.querySelector(".prev");
-
-        let index = 0;
-
-        function updateSlide() {
-          slides.style.transform = `translateX(-${index * 100}%)`;
-        }
-
-        nextBtn.addEventListener("click", (e) => {
-          e.stopPropagation();
-          index = (index + 1) % images.length;
-          updateSlide();
-        });
-
-        prevBtn.addEventListener("click", (e) => {
-          e.stopPropagation();
-          index = (index - 1 + images.length) % images.length;
-          updateSlide();
-        });
-
-        // optional: ensure first state is correct
-        updateSlide();
-      });
-
-      window.addEventListener("load", () => {
-        document.querySelectorAll(".image-slider").forEach((slider) => {
-          const slides = slider.querySelector(".slides");
-
-          // force browser repaint fix
-          slides.style.transform = "translateX(0%)";
-          slides.style.willChange = "transform";
-
-          setTimeout(() => {
-            slides.style.transform = "translateX(0%)";
-          }, 50);
-        });
-      });
-    </script>
   </body>
+  <script src="js/script2.js"></script>
 </html>
