@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <title>Md. Nazrul Islam Nayon | Flutter Developer</title>
+    <title>Md. Nazrul Islam Nayon</title>
 
     <link
       rel="stylesheet"
@@ -25,98 +25,83 @@
   <body class="text-slate-300 antialiased overflow-x-hidden">
     <!-- **************==========****************** NavBar Section ***************====================***************** -->
     <nav
-      class="fixed w-full z-50 bg-[#020617]/70 backdrop-blur-xl border-b border-white/10 transition-all duration-500"
+      class="fixed top-0 w-full z-50 bg-[#020617]/60 backdrop-blur-2xl border-b border-white/10 shadow-lg transition-all duration-500"
       id="navbar"
     >
       <div
-        class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center"
+        class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center"
       >
+        <!-- Logo -->
         <a
-          href="#"
-          class="text-lg sm:text-xl font-extrabold text-white tracking-tighter hover:scale-105 transition-transform duration-300"
+          href="#home"
+          class="text-lg sm:text-xl font-extrabold tracking-tight text-white group"
         >
-          <span class="text-purple-500">MD </span>NAZRUL<span
-            class="text-purple-400"
-            >.</span
+          <span
+            class="text-purple-500 group-hover:text-purple-400 transition-colors"
+            >MD</span
           >
+          NAZRUL
+          <span class="text-purple-400">.</span>
         </a>
+
+        <!-- Desktop Menu -->
         <div
-          class="hidden md:flex space-x-6 lg:space-x-10 text-[10px] lg:text-[11px] uppercase tracking-[0.2em] font-bold text-slate-400"
+          class="hidden md:flex items-center space-x-8 text-[11px] uppercase tracking-[0.18em] font-semibold text-slate-400"
         >
-          <a
-            href="#home"
-            class="nav-link active hover:text-purple-400 transition-all duration-300 pb-1 hover:pb-0"
-            >Home</a
-          >
-          <a
-            href="#about"
-            class="nav-link hover:text-purple-400 transition-all duration-300 pb-1 hover:pb-0"
-            >About</a
-          >
+          <a href="#home" class="nav-link relative group active">
+            Home
+            <span class="nav-indicator"></span>
+          </a>
 
-          <a
-            href="#projects"
-            class="nav-link hover:text-purple-400 transition-all duration-300 pb-1 hover:pb-0"
-            >Projects</a
-          >
-          <a
-            href="#experience"
-            class="nav-link hover:text-purple-400 transition-all duration-300 pb-1 hover:pb-0"
-            >Experience</a
-          >
+          <a href="#about" class="nav-link relative group">
+            About
+            <span class="nav-indicator"></span>
+          </a>
 
-          <a
-            href="#contact"
-            class="nav-link hover:text-purple-400 transition-all duration-300 pb-1 hover:pb-0"
-            >Contact</a
-          >
+          <a href="#projects" class="nav-link relative group">
+            Projects
+            <span class="nav-indicator"></span>
+          </a>
+
+          <a href="#experience" class="nav-link relative group">
+            Experience
+            <span class="nav-indicator"></span>
+          </a>
+
+          <a href="#contact" class="nav-link relative group">
+            Contact
+            <span class="nav-indicator"></span>
+          </a>
         </div>
+
+        <!-- Mobile Button -->
         <button
           id="menuBtn"
-          class="md:hidden text-white text-2xl focus:outline-none transition-transform hover:scale-110"
+          class="md:hidden text-white text-2xl focus:outline-none hover:scale-110 transition"
         >
           <i class="fas fa-bars"></i>
         </button>
       </div>
+
+      <!-- Mobile Menu -->
       <div
         id="mobileMenu"
-        class="hidden md:hidden bg-[#020617]/95 backdrop-blur-xl border-b border-white/10 px-4 py-4 flex flex-col space-y-3 text-sm font-bold uppercase tracking-wide animate-fadeInUp"
+        class="hidden md:hidden bg-[#020617]/95 backdrop-blur-xl border-t border-white/10 px-6 py-5 flex flex-col space-y-4 text-sm font-semibold uppercase tracking-wide animate-fadeInUp"
       >
-        <a
-          href="#home"
-          class="nav-link-mobile py-2 hover:text-purple-400 transition-all duration-300 hover:translate-x-2"
-          >Home</a
-        >
-        <a
-          href="#about"
-          class="nav-link-mobile py-2 hover:text-purple-400 transition-all duration-300 hover:translate-x-2"
-          >About</a
-        >
-
-        <a
-          href="#projects"
-          class="nav-link-mobile py-2 hover:text-purple-400 transition-all duration-300 hover:translate-x-2"
-          >Projects</a
-        >
-        <a
-          href="#experience"
-          class="nav-link-mobile py-2 hover:text-purple-400 transition-all duration-300 hover:translate-x-2"
-          >Experience</a
-        >
-
-        <a
-          href="#contact"
-          class="nav-link-mobile py-2 hover:text-purple-400 transition-all duration-300 hover:translate-x-2"
-          >Contact</a
-        >
+        <a href="#home" class="nav-link-mobile">Home</a>
+        <a href="#about" class="nav-link-mobile">About</a>
+        <a href="#projects" class="nav-link-mobile">Projects</a>
+        <a href="#experience" class="nav-link-mobile">Experience</a>
+        <a href="#contact" class="nav-link-mobile">Contact</a>
       </div>
     </nav>
 
-    <!-- **************==========****************** About Section ***************====================***************** -->
+    <!-- **************==========****************** Home Section ***************====================***************** -->
     <section
       id="home"
-      class="hero-gradient min-h-screen flex items-center px-4 sm:px-6 pt-24 md:pt-20 pb-16 relative overflow-hidden"
+      class="hero-gradient min-h-screen flex items-center px-4 sm:px-6 pt-24 md:pt-20 pb-24 relative overflow-hidden"
     >
+      <!-- Background Blur Effects -->
       <div class="absolute inset-0 opacity-20 pointer-events-none">
         <div
           class="absolute top-20 left-10 w-72 h-72 bg-purple-600 rounded-full blur-[100px] animate-pulse"
@@ -125,102 +110,143 @@
           class="absolute bottom-20 right-10 w-96 h-96 bg-blue-600 rounded-full blur-[120px] animate-pulse delay-1000"
         ></div>
       </div>
+
+      <!-- Main Content -->
       <div
-        class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10"
+        class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10 w-full mb-16 lg:mb-12"
       >
+        <!-- Left Content -->
         <div
           class="scroll-animate opacity-0 translate-y-8 text-center lg:text-left order-2 lg:order-1"
         >
           <p
-            class="text-purple-400 font-semibold mb-3 tracking-[0.2em] sm:tracking-[0.3em] uppercase text-[11px] sm:text-xs animate-fadeIn"
+            class="text-purple-400 font-semibold mb-3 tracking-[0.2em] uppercase text-xs"
           >
             Hello, I'm
           </p>
+
           <h1
-            class="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-5 leading-tight tracking-tighter"
+            class="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-5 leading-tight"
           >
             Md. Nazrul Islam
             <span
               class="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 shimmer-text"
-              >Nayon</span
             >
+              Nayon
+            </span>
           </h1>
-          <div class="text-slate-300 text-base sm:text-lg mb-6">
+
+          <div class="text-slate-300 text-lg mb-6">
             <span id="typed-text" class="font-semibold"></span>
             <span class="typewriter-cursor"></span>
           </div>
+
           <p
-            class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 mb-7 animate-fadeInUp"
+            class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 mb-7"
           >
             A passionate Flutter Developer focused on building scalable,
             high-performance mobile applications using clean architecture and
             modern state management solutions.
           </p>
+
+          <!-- Availability -->
           <div
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-slate-400 text-[11px] sm:text-xs font-semibold tracking-widest uppercase mb-8 animate-pulse-glow"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-slate-400 text-xs font-semibold mb-8 animate-pulse-glow"
           >
-            <span class="relative flex h-2 w-2"
-              ><span
+            <span class="relative flex h-2 w-2">
+              <span
                 class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"
-              ></span
-              ><span
+              ></span>
+              <span
                 class="relative inline-flex rounded-full h-2 w-2 bg-purple-500"
-              ></span
-            ></span>
+              ></span>
+            </span>
             Available for Opportunities
           </div>
+
+          <!-- Buttons -->
           <div
             class="flex flex-wrap gap-4 justify-center lg:justify-start mb-10"
           >
             <a
               href="https://drive.google.com/uc?export=download&id=1JiIZPuJ8Oxi-siUGfTotL54-RsYK0AE5"
-              class="btn-ripple group bg-gradient-to-r from-purple-600 to-blue-600 hover:opacity-90 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold transition-all duration-500 shadow-xl shadow-purple-900/20 flex items-center gap-2 text-sm sm:text-base hover:shadow-2xl hover:shadow-purple-700/30 hover:-translate-y-1"
+              class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-2xl font-bold transition hover:-translate-y-1"
             >
-              <span>Download CV</span>
-              <i
-                class="fas fa-download text-xs sm:text-sm group-hover:translate-y-1 transition-transform duration-300"
-              ></i>
+              Download CV
             </a>
+
             <div class="flex gap-3">
               <a
                 href="https://github.com/NazrulIslam991"
                 target="_blank"
-                class="bg-slate-800/50 hover:bg-slate-700 text-white border border-slate-700 px-4 sm:px-5 py-3 sm:py-4 rounded-2xl font-bold transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20"
-                ><i class="fab fa-github text-lg sm:text-xl"></i
-              ></a>
+                class="bg-slate-800 border border-slate-700 px-4 py-3 rounded-2xl hover:scale-110"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+
               <a
                 href="https://www.linkedin.com/in/nazrulislamnayon"
                 target="_blank"
-                rel="noopener noreferrer"
-                class="bg-slate-800/50 hover:bg-slate-700 text-white border border-slate-700 px-4 sm:px-5 py-3 sm:py-4 rounded-2xl font-bold transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/20"
-                ><i class="fab fa-linkedin-in text-lg sm:text-xl"></i
-              ></a>
+                class="bg-slate-800 border border-slate-700 px-4 py-3 rounded-2xl hover:scale-110"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
             </div>
           </div>
         </div>
+
+        <!-- Right Image & Stats Cards Grid -->
         <div
-          class="flex justify-center relative scroll-animate opacity-0 translate-x-8 order-1 lg:order-2"
+          class="flex flex-col items-center lg:items-end justify-center relative scroll-animate opacity-0 translate-x-8 order-1 lg:order-2"
         >
-          <div
-            class="relative w-full max-w-[280px] xs:max-w-sm sm:max-w-md group animate-float"
-          >
+          <div class="relative w-full max-w-sm group animate-float mb-8">
             <div
-              class="absolute -inset-4 bg-gradient-to-tr from-purple-600 to-blue-600 rounded-[3rem] opacity-40 blur-2xl group-hover:opacity-80 transition-all duration-700"
+              class="absolute -inset-4 bg-gradient-to-tr from-purple-600 to-blue-600 rounded-[3rem] opacity-40 blur-2xl"
             ></div>
+
             <div
-              class="relative rounded-2xl sm:rounded-[2.5rem] overflow-hidden border border-white/20 shadow-2xl transform transition-all duration-700 group-hover:scale-[1.05] group-hover:rotate-1"
+              class="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl"
             >
               <img
                 src="images/profile_image.png"
                 alt="Profile"
-                class="w-full object-cover transition-all duration-1000 group-hover:scale-110"
+                class="w-full object-cover"
               />
             </div>
+
             <div
-              class="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-gradient-to-r from-purple-900/90 to-blue-900/90 backdrop-blur-md border border-white/20 px-3 py-2 sm:px-5 sm:py-3 rounded-xl sm:rounded-2xl shadow-xl animate-pulse-glow"
+              class="absolute -bottom-5 -right-5 bg-gradient-to-r from-purple-900/90 to-blue-900/90 px-4 py-2 rounded-xl"
             >
-              <p class="text-white font-semibold text-[10px] sm:text-sm">
+              <p class="text-white text-xs font-semibold">
                 <i class="fas fa-code mr-1"></i> Flutter Dev
+              </p>
+            </div>
+          </div>
+
+          <!-- Stats Cards (Fixed Style matching your reference image) -->
+          <div class="grid grid-cols-2 gap-3 sm:gap-4 w-full max-w-sm">
+            <div
+              class="bg-white/[0.03] border border-white/10 backdrop-blur-md p-4 rounded-2xl text-center shadow-lg flex flex-col items-center justify-center"
+            >
+              <h3
+                class="text-xl sm:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 text-center"
+              >
+                1+
+              </h3>
+              <p class="text-xs text-slate-400 font-medium mt-1 text-center">
+                Years Exp.
+              </p>
+            </div>
+            <div
+              class="bg-white/[0.03] border border-white/10 backdrop-blur-md p-4 rounded-2xl text-center shadow-lg flex flex-col items-center justify-center"
+            >
+              <h3
+                class="text-xl sm:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 text-center"
+              >
+                14+
+              </h3>
+              <p class="text-xs text-slate-400 font-medium mt-1 text-center">
+                Projects
               </p>
             </div>
           </div>
@@ -974,22 +1000,6 @@
                 class="text-[10px] sm:text-xs text-slate-500 uppercase tracking-widest mt-1"
               >
                 Softvence Delta
-              </p>
-            </div>
-            <div
-              onclick="updateExperience('bsc')"
-              id="nav-bsc"
-              class="exp-nav-item p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-white/[0.02] border-l-4 border-transparent hover:bg-white/5 transition-all duration-300 cursor-pointer hover:scale-[1.02]"
-            >
-              <h4
-                class="text-slate-400 font-bold hover:text-white text-sm sm:text-base"
-              >
-                B.Sc. in CSE
-              </h4>
-              <p
-                class="text-[10px] sm:text-xs text-slate-500 uppercase tracking-widest mt-1"
-              >
-                Leading University
               </p>
             </div>
           </div>

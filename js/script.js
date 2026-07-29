@@ -30,18 +30,18 @@ const experienceData = {
     ],
     tags: ["Dart", "Flutter Basics", "UI Development", "Debugging"],
   },
-  bsc: {
-    title: "B.Sc. in Computer Science & Engineering",
-    company: "@ Leading University, Sylhet",
-    duration: "2022 — 2025",
-    points: [
-      "CGPA: 3.69, out of 4.00.",
-      "Developed <strong class='text-slate-200'>Bikretaa apps</strong> as final year project.",
-      "Active in programming club & hackathons.",
-      "Mastered OOP, Data Structures, DBMS.",
-    ],
-    tags: ["C/C++", "Java", "SQL", "Software Engineering"],
-  },
+  // bsc: {
+  //   title: "B.Sc. in Computer Science & Engineering",
+  //   company: "@ Leading University, Sylhet",
+  //   duration: "2022 — 2025",
+  //   points: [
+  //     "CGPA: 3.69, out of 4.00.",
+  //     "Developed <strong class='text-slate-200'>Bikretaa apps</strong> as final year project.",
+  //     "Active in programming club & hackathons.",
+  //     "Mastered OOP, Data Structures, DBMS.",
+  //   ],
+  //   tags: ["C/C++", "Java", "SQL", "Software Engineering"],
+  // },
 };
 
 // Data for About Section
@@ -85,12 +85,14 @@ const aboutData = {
         label: "B.Sc. in Computer Science & Engineering",
         institution: "Leading University, Sylhet",
         result: "CGPA 3.69",
+        year: "2022 - 2026",
       },
       {
         icon: "fa-microscope",
         label: "Higher Secondary Certificate (HSC)",
         institution: "BAF Shaheen College, Shamshernagar (Science)",
         result: "GPA 5.00",
+        year: "2020",
       },
       {
         icon: "fa-book",
@@ -98,6 +100,7 @@ const aboutData = {
         institution:
           "Deena-nath Institution Satkapon Govt. High School (Science)",
         result: "GPA 5.00",
+        year: "2018",
       },
     ],
   },
@@ -303,7 +306,7 @@ window.updateAbout = function (key) {
       contentHTML += `</div>`;
     }
 
-    // 2. Details (Bio & Edu) Logic - key !== 'cert' যোগ করা হয়েছে undefined সমস্যা দূর করতে
+    // 2. Details (Bio & Edu) Logic
     if (data.details && key !== "cert") {
       const isEdu = key === "edu";
       contentHTML += `<div class="grid ${isEdu ? "grid-cols-1" : "sm:grid-cols-2"} gap-4 border-t border-white/5 pt-6">`;
@@ -316,8 +319,10 @@ window.updateAbout = function (key) {
                         </div>
                         <div>
                             <span class="text-[10px] text-slate-500 block uppercase font-bold">${item.label}</span>
-                            <span class="text-slate-200 text-xs sm:text-sm font-medium group-hover:text-white">${isEdu ? item.institution : item.value}</span>
-                        </div>
+                        <span class="text-slate-200 text-xs sm:text-sm font-medium group-hover:text-white">
+                        ${isEdu ? `${item.institution} <span class="ml-2 text-emerald-400">(${item.year})</span>` : item.value}
+                      </span>                      
+                          </div>
                     </div>
                     ${isEdu ? `<div class="ml-4 px-2 py-1 rounded-md bg-emerald-500/10 text-emerald-500 text-[10px] font-bold group-hover:bg-emerald-500 group-hover:text-black">${item.result}</div>` : ""}
                 </div>`;
@@ -421,7 +426,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    { threshold: 0.5, rootMargin: "-80px 0px -20% 0px" },
+    { threshold: 0.35, rootMargin: "-80px 0px -20% 0px" },
   );
 
   sections.forEach((section) => scrollNavObserver.observe(section));
